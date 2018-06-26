@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+		var origem;
+		coordenadasPins = {	1:{x: '107px', y: '20px', nome: 'SN1'},
+					2:{x: 194, y: 20, nome: 'SN2'},
+					3:{x: 295, y: 20, nome: 'SN3'},
+					4:{x: 345, y: 20, nome: 'SN4'},
+					5:{x: 460, y: 20, nome: 'SN5'},
+					6:{x: 494, y: 20, nome: 'SN6'},
+					7:{x: 707, y: 20, nome: 'SN7'},
+					8:{x: 782, y: 20, nome: 'SN8'},
+					9:{x: 857, y: 20, nome: 'SN9'},
+					10:{x: 930, y: 20, nome: 'SN10'},
+					11:{x: 1008, y: 77, nome: 'SL1'},
+					12:{x: 1062, y: 117, nome: 'SL2'},
+					13:{x: 1082, y: 289, nome: 'SL3'},
+					14:{x: 1083, y: 640, nome: 'SL4'},
+					15:{x: 42, y: 660, nome: 'SS1'},
+					16:{x: 337, y: 660, nome: 'SS2'},
+					17:{x: 504, y: 660, nome: 'SS3'},
+					18:{x: 759, y: 660, nome: 'SS4'},
+					19:{x: 955, y: 660, nome: 'SS5'},
+					20:{x: 58, y: 362, nome: 'SO1'},
+					21:{x: 46, y: 546, nome: 'SO2'},
+					22:{x: 96, y: 230, nome: 'brazlandia'},
+					23:{x: 719, y: 163, nome: 'planaltina'},
+					24:{x: 562, y: 205, nome: 'sobradinho'},
+					25:{x: 553, y: 300, nome: 'paranoa'},
+					26:{x: 368, y: 362, nome: 'cruzeiro'},
+					27:{x: 190, y: 360, nome: 'ceilandia'},
+					28:{x: 250, y: 400, nome: 'taguatinga'},
+					29:{x: 332, y: 398, nome: 'guara'},
+					30:{x: 240, y: 467, nome: 'samambaia'},
+					31:{x: 311, y: 463, nome: 'nucleoBandeirante'},
+					32:{x: 415, y: 470, nome: 'aeroporto'},
+					33:{x: 578, y: 500, nome: 'saoSebastiao'},
+					34:{x: 212, y: 512, nome: 'recantoDasEmas'},
+					35:{x: 240, y: 629, nome: 'gama'},
+					36:{x: 334, y: 628, nome: 'santaMaria'}};
+	$(document).ready(function() {
+		$("#pinSN1").css({
+			"position": "absolute",
+		   	"top": coordenadasPins[1].y,
+ 			"left": coordenadasPins[1].x
+		});
+
+		$("#pinSN1").click(function(){
+			$("#pinSN1").attr("src", "imgs/Mapa/pinSelected.png");
+			origem = $("#origem option:selected").val();
+			destino = $("#destino option:selected").val();
+		});
+	});
+	
+</script>
+<link rel="stylesheet" href="Grafo.css">
+
+<title>Grafo</title>
+
+</head>
+
+<body>
+<img src="imgs/Mapa/Fundo.png" id="FundoMapa" />
+<img src="imgs/Mapa/Labels.png" id="Labels" />
+<img src="imgs/Mapa/pin.png" id="pinSN1" />
+
+<div id="menu">
+	<span id="centralizaMenu">
+	Origem:
+	<select id="origem">
+      <option value="SN 1">SN 1</option>
+      <option value="SN 2">SN 2</option>
+      <option value="SN 3">SN 3</option>
+      <option value="SN 4">SN 4</option>
+      <option value="SN 5">SN 5</option>
+      <option value="SN 6">SN 6</option>
+      <option value="SN 7">SN 7</option>
+      <option value="SN 8">SN 8</option>
+      <option value="SN 9">SN 9</option>
+      <option value="SN 10">SN 10</option>
+      
+      <option value="SL 1">SL 1</option>
+      <option value="SL 2">SL 2</option>
+      <option value="SL 3">SL 3</option>
+      <option value="SL 4">SL 4</option>
+      
+      <option value="SS 1">SS 1</option>
+      <option value="SS 2">SS 2</option>
+      <option value="SS 3">SS 3</option>
+      <option value="SS 4">SS 4</option>
+      <option value="SS 5">SS 5</option>
+      
+      <option value="SO 1">SO 1</option>
+      <option value="SO 2">SO 2</option>
+      
+      <option value="brazlandia">Brazlândia</option>
+      <option value="planaltina">Planaltina</option>
+      <option value="sobradinho">Sobradinho</option>
+      <option value="paranoa">Paranoá</option>
+      <option value="cruzeiro">Cruzeiro</option>
+      <option value="ceilandia">Ceilândia</option>
+      <option value="taguatinga">Taguatinga</option>
+      <option value="guara">Guará</option>
+      <option value="samambaia">Samambaia</option>
+      <option value="nucleoBandeirante">Núcleo Bandeirante</option>
+      <option value="aeroporto">Aeroporto</option>
+      <option value="saoSebastiao">São Sebastião</option>
+      <option value="recantoDasEmas">Recanto das Emas</option>
+      <option value="gama">Gama</option>
+      <option value="santaMaria">Santa Maria</option>
+    </select>
+    
+    Destino:
+    <select id="destino">
+      <option value="SN 1">SN 1</option>
+      <option value="SN 2">SN 2</option>
+      <option value="SN 3">SN 3</option>
+      <option value="SN 4">SN 4</option>
+      <option value="SN 5">SN 5</option>
+      <option value="SN 6">SN 6</option>
+      <option value="SN 7">SN 7</option>
+      <option value="SN 8">SN 8</option>
+      <option value="SN 9">SN 9</option>
+      <option value="SN 10">SN 10</option>
+      
+      <option value="SL 1">SL 1</option>
+      <option value="SL 2">SL 2</option>
+      <option value="SL 3">SL 3</option>
+      <option value="SL 4">SL 4</option>
+      
+      <option value="SS 1">SS 1</option>
+      <option value="SS 2">SS 2</option>
+      <option value="SS 3">SS 3</option>
+      <option value="SS 4">SS 4</option>
+      <option value="SS 5">SS 5</option>
+      
+      <option value="SO 1">SO 1</option>
+      <option value="SO 2">SO 2</option>
+      
+      <option value="brazlandia">Brazlândia</option>
+      <option value="planaltina">Planaltina</option>
+      <option value="sobradinho">Sobradinho</option>
+      <option value="paranoa">Paranoá</option>
+      <option value="cruzeiro">Cruzeiro</option>
+      <option value="ceilandia">Ceilândia</option>
+      <option value="taguatinga">Taguatinga</option>
+      <option value="guara">Guará</option>
+      <option value="samambaia">Samambaia</option>
+      <option value="nucleoBandeirante">Núcleo Bandeirante</option>
+      <option value="aeroporto">Aeroporto</option>
+      <option value="saoSebastiao">São Sebastião</option>
+      <option value="recantoDasEmas">Recanto das Emas</option>
+      <option value="gama">Gama</option>
+      <option value="santaMaria">Santa Maria</option>
+    </select>
+    </span>
+</div>
+</body>
+</html>

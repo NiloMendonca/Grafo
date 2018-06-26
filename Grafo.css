@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+img#FundoMapa {
+	position: absolute;
+	left: 20%;
+	z-index: 1;
+	width: 60%;
+}
+img#Labels {
+	position: absolute;
+	left: 20.7%;
+	z-index: 2;
+	width: 60%;	
+}
+div#menu {
+	position: absolute;
+	width: 100%;
+	height: 50px;
+	left: 0px;
+	bottom: 0px;
+	background-color:#999;
+	z-index: 3;
+}
+span#centralizaMenu {
+	position: absolute;
+	left: 50%;
+	margin-left: -205px;
+	top: 50%;
+	margin-top: -10px;	
+}
