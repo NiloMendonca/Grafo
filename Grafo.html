@@ -4,8 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
-		var origem;
-		coordenadasPins = {	1:{x: '107px', y: '20px', nome: 'SN1'},
+	coordenadasPins = {	
+					1:{x: 107, y: 20, nome: 'SN1'},
 					2:{x: 194, y: 20, nome: 'SN2'},
 					3:{x: 295, y: 20, nome: 'SN3'},
 					4:{x: 345, y: 20, nome: 'SN4'},
@@ -40,61 +40,522 @@
 					33:{x: 578, y: 500, nome: 'saoSebastiao'},
 					34:{x: 212, y: 512, nome: 'recantoDasEmas'},
 					35:{x: 240, y: 629, nome: 'gama'},
-					36:{x: 334, y: 628, nome: 'santaMaria'}};
+					36:{x: 334, y: 628, nome: 'santaMaria'}
+	};
+	
+	coordenadasArestas = {
+					1:{x: 90, y: 3, w: 81, h: 96, nome: 'Aresta1'},
+					2:{x: 105, y: 28, w: 96, h: 72, nome: 'Aresta2'},
+					3:{x: 134, y: 3, w: 105, h: 92, nome: 'Aresta3'},
+					4:{x: 96, y: 32, w: 82, h: 124, nome: 'Aresta4'},
+					5:{x: 110, y: 26, w: 94, h: 132, nome: 'Aresta5'},
+					6:{x: 97, y: 91, w: 80, h: 108, nome: 'Aresta6'},
+					7:{x: 96, y: 116, w: 127, h: 85, nome: 'Aresta7'},
+					8:{x: 157, y: 107, w: 132, h: 82, nome: 'Aresta8'},
+					9:{x: 221, y: 88, w: 121, h: 104, nome: 'Aresta9'},
+					10:{x: 267, y: 3, w: 77, h: 151, nome: 'Aresta10'},
+					11:{x: 76, y: 132, w: 88, h: 95, nome: 'Aresta11'},
+					12:{x: 153, y: 115, w: 71, h: 98, nome: 'Aresta12'},
+					13:{x: 200, y: 122, w: 93, h: 95, nome: 'Aresta13'},
+					14:{x: 74, y: 149, w: 150, h: 86, nome: 'Aresta14'},
+					15:{x: 159, y: 147, w: 110, h: 70, nome: 'Aresta15'},
+					16:{x: , y: , w: , h: , nome: 'Aresta16'},
+					17:{x: , y: , w: , h: , nome: 'Aresta17'},
+					18:{x: , y: , w: , h: , nome: 'Aresta18'},
+					19:{x: , y: , w: , h: , nome: 'Aresta19'},
+					20:{x: , y: , w: , h: , nome: 'Aresta20'},
+					21:{x: , y: , w: , h: , nome: 'Aresta21'},
+					22:{x: , y: , w: , h: , nome: 'Aresta22'},
+					23:{x: , y: , w: , h: , nome: 'Aresta23'},
+					24:{x: , y: , w: , h: , nome: 'Aresta24'},
+					25:{x: , y: , w: , h: , nome: 'Aresta25'},
+					26:{x: , y: , w: , h: , nome: 'Aresta26'},
+					27:{x: , y: , w: , h: , nome: 'Aresta27'},
+					28:{x: , y: , w: , h: , nome: 'Aresta28'},
+					29:{x: , y: , w: , h: , nome: 'Aresta29'},
+					30:{x: , y: , w: , h: , nome: 'Aresta03'},
+					31:{x: , y: , w: , h: , nome: 'Aresta31'},
+					32:{x: , y: , w: , h: , nome: 'Aresta32'},
+					33:{x: , y: , w: , h: , nome: 'Aresta33'},
+					34:{x: , y: , w: , h: , nome: 'Aresta34'},
+					35:{x: , y: , w: , h: , nome: 'Aresta35'},
+					36:{x: , y: , w: , h: , nome: 'Aresta36'},
+					37:{x: , y: , w: , h: , nome: 'Aresta37'},
+					38:{x: , y: , w: , h: , nome: 'Aresta38'},
+					39:{x: , y: , w: , h: , nome: 'Aresta39'},
+					40:{x: , y: , w: , h: , nome: 'Aresta40'},
+					41:{x: , y: , w: , h: , nome: 'Aresta41'},
+					42:{x: , y: , w: , h: , nome: 'Aresta42'},
+					43:{x: , y: , w: , h: , nome: 'Aresta43'},
+					44:{x: 239, y: 369, w: 167, h: 94, nome: 'Aresta44'},
+					45:{x: , y: , w: , h: , nome: 'Aresta45'},
+					46:{x: 57, y: 395, w: 132, h: 101, nome: 'Aresta46'},
+					47:{x: 123, y: 394, w: 182, h: 102, nome: 'Aresta47'},
+					48:{x: 238, y: 398, w: 79, h: 87, nome: 'Aresta48'},
+					49:{x: 329, y: 370, w: 76, h: 133, nome: 'Aresta49'},
+					50:{x: 25, y: 396, w: 100, h: 182, nome: 'Aresta50'},
+					51:{x: , y: , w: , h: , nome: 'Aresta51'},
+					52:{x: , y: , w: , h: , nome: 'Aresta52'},
+					53:{x: , y: , w: , h: , nome: 'Aresta53'},
+					54:{x: , y: , w: , h: , nome: 'Aresta54'},
+					55:{x: , y: , w: , h: , nome: 'Aresta55'},
+					56:{x: , y: , w: , h: , nome: 'Aresta56'},
+					57:{x: , y: , w: , h: , nome: 'Aresta57'},
+					58:{x: , y: , w: , h: , nome: 'Aresta58'},
+					59:{x: , y: , w: , h: , nome: 'Aresta59'},
+					60:{x: , y: , w: , h: , nome: 'Aresta60'},
+					61:{x: , y: , w: , h: , nome: 'Aresta61'},
+					62:{x: , y: , w: , h: , nome: 'Aresta62'},
+					63:{x: , y: , w: , h: , nome: 'Aresta63'},
+					64:{x: , y: , w: , h: , nome: 'Aresta64'},
+					65:{x: , y: , w: , h: , nome: 'Aresta65'},
+					66:{x: , y: , w: , h: , nome: 'Aresta66'},
+					67:{x: , y: , w: , h: , nome: 'Aresta67'},
+					68:{x: , y: , w: , h: , nome: 'Aresta68'},
+					69:{x: , y: , w: , h: , nome: 'Aresta69'},
+					70:{x: , y: , w: , h: , nome: 'Aresta70'},
+					71:{x: , y: , w: , h: , nome: 'Aresta71'},
+					72:{x: , y: , w: , h: , nome: 'Aresta72'},
+					73:{x: , y: , w: , h: , nome: 'Aresta73'},
+					74:{x: , y: , w: , h: , nome: 'Aresta74'},
+					75:{x: , y: , w: , h: , nome: 'Aresta75'},
+					76:{x: , y: , w: , h: , nome: 'Aresta76'},
+					77:{x: , y: , w: , h: , nome: 'Aresta77'},
+					78:{x: , y: , w: , h: , nome: 'Aresta78'},
+					79:{x: , y: , w: , h: , nome: 'Aresta79'},
+					80:{x: , y: , w: , h: , nome: 'Aresta80'},
+					81:{x: , y: , w: , h: , nome: 'Aresta81'},
+					82:{x: , y: , w: , h: , nome: 'Aresta82'},
+					83:{x: , y: , w: , h: , nome: 'Aresta83'},
+					84:{x: , y: , w: , h: , nome: 'Aresta84'},
+					85:{x: , y: , w: , h: , nome: 'Aresta85'},
+					86:{x: , y: , w: , h: , nome: 'Aresta86'},
+					87:{x: , y: , w: , h: , nome: 'Aresta87'},
+					88:{x: , y: , w: , h: , nome: 'Aresta88'},
+					89:{x: , y: , w: , h: , nome: 'Aresta89'},
+					90:{x: , y: , w: , h: , nome: 'Aresta90'},
+					91:{x: , y: , w: , h: , nome: 'Aresta91'},
+					92:{x: , y: , w: , h: , nome: 'Aresta92'},
+					93:{x: , y: , w: , h: , nome: 'Aresta93'},
+					94:{x: , y: , w: , h: , nome: 'Aresta94'},
+					95:{x: , y: , w: , h: , nome: 'Aresta95'},
+					96:{x: , y: , w: , h: , nome: 'Aresta96'},
+					97:{x: , y: , w: , h: , nome: 'Aresta97'},
+					98:{x: , y: , w: , h: , nome: 'Aresta98'},
+					99:{x: , y: , w: , h: , nome: 'Aresta99'},
+					100:{x: , y: , w: , h: , nome: 'Aresta100'},
+					101:{x: , y: , w: , h: , nome: 'Aresta101'},
+					102:{x: , y: , w: , h: , nome: 'Aresta102'},
+					103:{x: , y: , w: , h: , nome: 'Aresta103'},
+					104:{x: , y: , w: , h: , nome: 'Aresta104'},
+					105:{x: , y: , w: , h: , nome: 'Aresta105'},
+					106:{x: , y: , w: , h: , nome: 'Aresta106'},
+					107:{x: , y: , w: , h: , nome: 'Aresta107'},
+					108:{x: , y: , w: , h: , nome: 'Aresta108'},
+					109:{x: , y: , w: , h: , nome: 'Aresta109'},
+					110:{x: , y: , w: , h: , nome: 'Aresta110'},
+					111:{x: , y: , w: , h: , nome: 'Aresta111'},
+					112:{x: , y: , w: , h: , nome: 'Aresta112'},
+					113:{x: , y: , w: , h: , nome: 'Aresta113'},
+					114:{x: , y: , w: , h: , nome: 'Aresta114'},
+					115:{x: , y: , w: , h: , nome: 'Aresta115'},
+					116:{x: , y: , w: , h: , nome: 'Aresta116'},
+					117:{x: , y: , w: , h: , nome: 'Aresta117'},
+					118:{x: , y: , w: , h: , nome: 'Aresta118'},
+					119:{x: , y: , w: , h: , nome: 'Aresta119'},
+					120:{x: , y: , w: , h: , nome: 'Aresta120'},
+					121:{x: , y: , w: , h: , nome: 'Aresta121'},
+					122:{x: , y: , w: , h: , nome: 'Aresta122'},
+					123:{x: , y: , w: , h: , nome: 'Aresta123'},
+					124:{x: , y: , w: , h: , nome: 'Aresta124'},
+					125:{x: , y: , w: , h: , nome: 'Aresta125'},
+					126:{x: , y: , w: , h: , nome: 'Aresta126'},
+					127:{x: , y: , w: , h: , nome: 'Aresta127'},
+					128:{x: , y: , w: , h: , nome: 'Aresta128'},
+					129:{x: , y: , w: , h: , nome: 'Aresta129'},
+					130:{x: , y: , w: , h: , nome: 'Aresta130'},
+					131:{x: , y: , w: , h: , nome: 'Aresta131'},
+					132:{x: , y: , w: , h: , nome: 'Aresta132'},
+					133:{x: , y: , w: , h: , nome: 'Aresta133'},
+					134:{x: , y: , w: , h: , nome: 'Aresta134'},
+					135:{x: , y: , w: , h: , nome: 'Aresta135'},
+					136:{x: , y: , w: , h: , nome: 'Aresta136'},
+					137:{x: , y: , w: , h: , nome: 'Aresta137'},
+					138:{x: , y: , w: , h: , nome: 'Aresta138'},
+					139:{x: , y: , w: , h: , nome: 'Aresta139'},
+					140:{x: , y: , w: , h: , nome: 'Aresta140'},
+					141:{x: , y: , w: , h: , nome: 'Aresta141'},
+					142:{x: , y: , w: , h: , nome: 'Aresta142'},
+					143:{x: , y: , w: , h: , nome: 'Aresta143'},
+					144:{x: , y: , w: , h: , nome: 'Aresta144'},
+					145:{x: , y: , w: , h: , nome: 'Aresta145'},
+					146:{x: , y: , w: , h: , nome: 'Aresta146'},
+					147:{x: , y: , w: , h: , nome: 'Aresta147'},
+					148:{x: , y: , w: , h: , nome: 'Aresta148'},
+					149:{x: , y: , w: , h: , nome: 'Aresta149'},
+					150:{x: , y: , w: , h: , nome: 'Aresta150'},
+					151:{x: , y: , w: , h: , nome: 'Aresta151'},
+					152:{x: , y: , w: , h: , nome: 'Aresta152'},
+					153:{x: , y: , w: , h: , nome: 'Aresta153'},
+					154:{x: , y: , w: , h: , nome: 'Aresta154'},
+					155:{x: , y: , w: , h: , nome: 'Aresta155'},
+					156:{x: , y: , w: , h: , nome: 'Aresta156'},
+					157:{x: , y: , w: , h: , nome: 'Aresta157'},
+					158:{x: , y: , w: , h: , nome: 'Aresta158'},
+					159:{x: , y: , w: , h: , nome: 'Aresta159'},
+					160:{x: , y: , w: , h: , nome: 'Aresta160'},
+					161:{x: , y: , w: , h: , nome: 'Aresta161'},
+					162:{x: , y: , w: , h: , nome: 'Aresta162'},
+					163:{x: , y: , w: , h: , nome: 'Aresta163'},
+					164:{x: , y: , w: , h: , nome: 'Aresta164'},
+					165:{x: , y: , w: , h: , nome: 'Aresta165'},
+					166:{x: , y: , w: , h: , nome: 'Aresta166'},
+					167:{x: , y: , w: , h: , nome: 'Aresta167'},
+					168:{x: , y: , w: , h: , nome: 'Aresta168'},
+					169:{x: , y: , w: , h: , nome: 'Aresta169'},
+					170:{x: , y: , w: , h: , nome: 'Aresta170'},
+					171:{x: , y: , w: , h: , nome: 'Aresta171'},
+					172:{x: , y: , w: , h: , nome: 'Aresta172'},
+					173:{x: , y: , w: , h: , nome: 'Aresta173'},
+					174:{x: , y: , w: , h: , nome: 'Aresta174'},
+					175:{x: , y: , w: , h: , nome: 'Aresta175'},
+					176:{x: , y: , w: , h: , nome: 'Aresta176'},
+					177:{x: , y: , w: , h: , nome: 'Aresta177'},
+					178:{x: , y: , w: , h: , nome: 'Aresta178'},
+					179:{x: , y: , w: , h: , nome: 'Aresta179'},
+					180:{x: , y: , w: , h: , nome: 'Aresta180'},
+					181:{x: , y: , w: , h: , nome: 'Aresta181'},
+					182:{x: , y: , w: , h: , nome: 'Aresta182'},
+					183:{x: , y: , w: , h: , nome: 'Aresta183'},
+					184:{x: , y: , w: , h: , nome: 'Aresta184'},
+					185:{x: , y: , w: , h: , nome: 'Aresta185'},
+					186:{x: , y: , w: , h: , nome: 'Aresta186'},
+					187:{x: , y: , w: , h: , nome: 'Aresta187'},
+					188:{x: , y: , w: , h: , nome: 'Aresta188'},
+					189:{x: , y: , w: , h: , nome: 'Aresta189'},
+					190:{x: , y: , w: , h: , nome: 'Aresta190'},
+					191:{x: , y: , w: , h: , nome: 'Aresta191'},
+					192:{x: , y: , w: , h: , nome: 'Aresta192'},
+					193:{x: , y: , w: , h: , nome: 'Aresta193'},
+					194:{x: , y: , w: , h: , nome: 'Aresta194'},
+					195:{x: , y: , w: , h: , nome: 'Aresta195'},
+					196:{x: , y: , w: , h: , nome: 'Aresta196'},
+					197:{x: , y: , w: , h: , nome: 'Aresta197'},
+					198:{x: , y: , w: , h: , nome: 'Aresta198'},
+					199:{x: , y: , w: , h: , nome: 'Aresta199'},
+					200:{x: , y: , w: , h: , nome: 'Aresta200'},
+					201:{x: , y: , w: , h: , nome: 'Aresta201'},
+					202:{x: , y: , w: , h: , nome: 'Aresta202'},
+					203:{x: , y: , w: , h: , nome: 'Aresta203'},
+					204:{x: , y: , w: , h: , nome: 'Aresta204'},
+					205:{x: , y: , w: , h: , nome: 'Aresta205'},
+					206:{x: , y: , w: , h: , nome: 'Aresta206'},
+					207:{x: , y: , w: , h: , nome: 'Aresta207'},
+					208:{x: , y: , w: , h: , nome: 'Aresta208'},
+					209:{x: , y: , w: , h: , nome: 'Aresta209'},
+					210:{x: , y: , w: , h: , nome: 'Aresta210'},
+					211:{x: , y: , w: , h: , nome: 'Aresta211'},
+					212:{x: , y: , w: , h: , nome: 'Aresta212'},
+					213:{x: , y: , w: , h: , nome: 'Aresta213'}
+	};
+	
 	$(document).ready(function() {
-		$("#pinSN1").css({
-			"position": "absolute",
+		$("#pinSelecionadoOrigem").css({
+		   	"top": coordenadasPins[1].y,
+ 			"left": coordenadasPins[1].x
+		});
+		$("#pinSelecionadoDestino").css({
 		   	"top": coordenadasPins[1].y,
  			"left": coordenadasPins[1].x
 		});
 
-		$("#pinSN1").click(function(){
-			$("#pinSN1").attr("src", "imgs/Mapa/pinSelected.png");
-			origem = $("#origem option:selected").val();
-			destino = $("#destino option:selected").val();
+		$("#menu").click(function(){
+			var origem = $("#origem option:selected").val();
+			var destino = $("#destino option:selected").val();
+			
+			for(var i in coordenadasPins){
+				if(coordenadasPins[i].nome == origem){
+					$("#pinSelecionadoOrigem").css({
+						"top": coordenadasPins[i].y,
+						"left": coordenadasPins[i].x
+					});
+				}
+				
+				if(coordenadasPins[i].nome == destino){
+					$("#pinSelecionadoDestino").css({
+						"top": coordenadasPins[i].y,
+						"left": coordenadasPins[i].x
+					});
+				}
+			};
 		});
 	});
 	
 </script>
 <link rel="stylesheet" href="Grafo.css">
-
 <title>Grafo</title>
-
 </head>
 
 <body>
-<img src="imgs/Mapa/Fundo.png" id="FundoMapa" />
-<img src="imgs/Mapa/Labels.png" id="Labels" />
-<img src="imgs/Mapa/pin.png" id="pinSN1" />
+<div id="containerMapa">
+    <img src="imgs/Mapa/Fundo.png" id="FundoMapa" />
+    <img src="imgs/Mapa/Caminho.png" id="caminhosNaoSelecionado" />
+    <img src="imgs/Mapa/Pins.png" id="pinsNaoSelecionado" />
+    <img src="imgs/Mapa/Labels.png" id="Labels" />
+    <img src="imgs/Mapa/pinSelecionado.png" id="pinSelecionadoOrigem" />
+    <img src="imgs/Mapa/pinSelecionado.png" id="pinSelecionadoDestino" />
+    <!--
+    <img src="imgs/CaminhoSelecionado/aresta1.png" id="aresta1" />
+    <img src="imgs/CaminhoSelecionado/aresta2.png" id="aresta2" />
+    <img src="imgs/CaminhoSelecionado/aresta3.png" id="aresta3" />
+    <img src="imgs/CaminhoSelecionado/aresta4.png" id="aresta4" />
+    <img src="imgs/CaminhoSelecionado/aresta5.png" id="aresta5" />
+    <img src="imgs/CaminhoSelecionado/aresta6.png" id="aresta6" />
+    <img src="imgs/CaminhoSelecionado/aresta7.png" id="aresta7" />
+    <img src="imgs/CaminhoSelecionado/aresta8.png" id="aresta8" />
+    <img src="imgs/CaminhoSelecionado/aresta9.png" id="aresta9" />
+    <img src="imgs/CaminhoSelecionado/aresta10.png" id="aresta10" />
+    <img src="imgs/CaminhoSelecionado/aresta11.png" id="aresta11" />
+    <img src="imgs/CaminhoSelecionado/aresta12.png" id="aresta12" />
+    <img src="imgs/CaminhoSelecionado/aresta13.png" id="aresta13" />
+    <img src="imgs/CaminhoSelecionado/aresta14.png" id="aresta14" />
+    <img src="imgs/CaminhoSelecionado/aresta15.png" id="aresta15" />
+    <img src="imgs/CaminhoSelecionado/aresta16.png" id="aresta16" />
+    <img src="imgs/CaminhoSelecionado/aresta17.png" id="aresta17" />
+    <img src="imgs/CaminhoSelecionado/aresta18.png" id="aresta18" />
+    <img src="imgs/CaminhoSelecionado/aresta19.png" id="aresta19" />
+    <img src="imgs/CaminhoSelecionado/aresta20.png" id="aresta20" />
+    <img src="imgs/CaminhoSelecionado/aresta21.png" id="aresta21" />
+    <img src="imgs/CaminhoSelecionado/aresta22.png" id="aresta22" />
+    <img src="imgs/CaminhoSelecionado/aresta23.png" id="aresta23" />
+    <img src="imgs/CaminhoSelecionado/aresta24.png" id="aresta24" />
+    <img src="imgs/CaminhoSelecionado/aresta25.png" id="aresta25" />
+    <img src="imgs/CaminhoSelecionado/aresta26.png" id="aresta26" />
+    <img src="imgs/CaminhoSelecionado/aresta27.png" id="aresta27" />
+    <img src="imgs/CaminhoSelecionado/aresta28.png" id="aresta28" />
+    <img src="imgs/CaminhoSelecionado/aresta29.png" id="aresta29" />
+    <img src="imgs/CaminhoSelecionado/aresta30.png" id="aresta30" />
+    <img src="imgs/CaminhoSelecionado/aresta31.png" id="aresta31" />
+    <img src="imgs/CaminhoSelecionado/aresta32.png" id="aresta32" />
+    <img src="imgs/CaminhoSelecionado/aresta33.png" id="aresta33" />
+    <img src="imgs/CaminhoSelecionado/aresta34.png" id="aresta34" />
+    <img src="imgs/CaminhoSelecionado/aresta35.png" id="aresta35" />
+    <img src="imgs/CaminhoSelecionado/aresta36.png" id="aresta36" />
+    <img src="imgs/CaminhoSelecionado/aresta37.png" id="aresta37" />
+    <img src="imgs/CaminhoSelecionado/aresta38.png" id="aresta38" />
+    <img src="imgs/CaminhoSelecionado/aresta39.png" id="aresta39" />
+    <img src="imgs/CaminhoSelecionado/aresta40.png" id="aresta40" />
+    <img src="imgs/CaminhoSelecionado/aresta41.png" id="aresta41" />
+    <img src="imgs/CaminhoSelecionado/aresta42.png" id="aresta42" />
+    <img src="imgs/CaminhoSelecionado/aresta43.png" id="aresta43" />
+    <img src="imgs/CaminhoSelecionado/aresta44.png" id="aresta44" />
+    <img src="imgs/CaminhoSelecionado/aresta45.png" id="aresta45" />
+    <img src="imgs/CaminhoSelecionado/aresta46.png" id="aresta46" />
+    <img src="imgs/CaminhoSelecionado/aresta47.png" id="aresta47" />
+    <img src="imgs/CaminhoSelecionado/aresta48.png" id="aresta48" />
+    <img src="imgs/CaminhoSelecionado/aresta49.png" id="aresta49" />
+    <img src="imgs/CaminhoSelecionado/aresta50.png" id="aresta50" />
+    <img src="imgs/CaminhoSelecionado/aresta51.png" id="aresta51" />
+    <img src="imgs/CaminhoSelecionado/aresta52.png" id="aresta52" />
+    <img src="imgs/CaminhoSelecionado/aresta53.png" id="aresta53" />
+    <img src="imgs/CaminhoSelecionado/aresta54.png" id="aresta54" />
+    <img src="imgs/CaminhoSelecionado/aresta55.png" id="aresta55" />
+    <img src="imgs/CaminhoSelecionado/aresta56.png" id="aresta56" />
+    <img src="imgs/CaminhoSelecionado/aresta57.png" id="aresta57" />
+    <img src="imgs/CaminhoSelecionado/aresta58.png" id="aresta58" />
+    <img src="imgs/CaminhoSelecionado/aresta59.png" id="aresta59" />
+    <img src="imgs/CaminhoSelecionado/aresta60.png" id="aresta60" />
+    <img src="imgs/CaminhoSelecionado/aresta61.png" id="aresta61" />
+    <img src="imgs/CaminhoSelecionado/aresta62.png" id="aresta62" />
+    <img src="imgs/CaminhoSelecionado/aresta63.png" id="aresta63" />
+    <img src="imgs/CaminhoSelecionado/aresta64.png" id="aresta64" />
+    <img src="imgs/CaminhoSelecionado/aresta65.png" id="aresta65" />
+    <img src="imgs/CaminhoSelecionado/aresta66.png" id="aresta66" />
+    <img src="imgs/CaminhoSelecionado/aresta67.png" id="aresta67" />
+    <img src="imgs/CaminhoSelecionado/aresta68.png" id="aresta68" />
+    <img src="imgs/CaminhoSelecionado/aresta69.png" id="aresta69" />
+    <img src="imgs/CaminhoSelecionado/aresta70.png" id="aresta70" />
+    <img src="imgs/CaminhoSelecionado/aresta71.png" id="aresta71" />
+    <img src="imgs/CaminhoSelecionado/aresta72.png" id="aresta72" />
+    <img src="imgs/CaminhoSelecionado/aresta73.png" id="aresta73" />
+    <img src="imgs/CaminhoSelecionado/aresta74.png" id="aresta74" />
+    <img src="imgs/CaminhoSelecionado/aresta75.png" id="aresta75" />
+    <img src="imgs/CaminhoSelecionado/aresta76.png" id="aresta76" />
+    <img src="imgs/CaminhoSelecionado/aresta77.png" id="aresta77" />
+    <img src="imgs/CaminhoSelecionado/aresta78.png" id="aresta78" />
+    <img src="imgs/CaminhoSelecionado/aresta79.png" id="aresta79" />
+    <img src="imgs/CaminhoSelecionado/aresta70.png" id="aresta70" />
+    <img src="imgs/CaminhoSelecionado/aresta81.png" id="aresta81" />
+    <img src="imgs/CaminhoSelecionado/aresta82.png" id="aresta82" />
+    <img src="imgs/CaminhoSelecionado/aresta83.png" id="aresta83" />
+    <img src="imgs/CaminhoSelecionado/aresta84.png" id="aresta84" />
+    <img src="imgs/CaminhoSelecionado/aresta85.png" id="aresta85" />
+    <img src="imgs/CaminhoSelecionado/aresta86.png" id="aresta86" />
+    <img src="imgs/CaminhoSelecionado/aresta87.png" id="aresta87" />
+    <img src="imgs/CaminhoSelecionado/aresta88.png" id="aresta88" />
+    <img src="imgs/CaminhoSelecionado/aresta89.png" id="aresta89" />
+    <img src="imgs/CaminhoSelecionado/aresta90.png" id="aresta90" />
+    <img src="imgs/CaminhoSelecionado/aresta91.png" id="aresta91" />
+    <img src="imgs/CaminhoSelecionado/aresta92.png" id="aresta92" />
+    <img src="imgs/CaminhoSelecionado/aresta93.png" id="aresta93" />
+    <img src="imgs/CaminhoSelecionado/aresta94.png" id="aresta94" />
+    <img src="imgs/CaminhoSelecionado/aresta95.png" id="aresta95" />
+    <img src="imgs/CaminhoSelecionado/aresta96.png" id="aresta96" />
+    <img src="imgs/CaminhoSelecionado/aresta97.png" id="aresta97" />
+    <img src="imgs/CaminhoSelecionado/aresta98.png" id="aresta98" />
+    <img src="imgs/CaminhoSelecionado/aresta99.png" id="aresta99" />
+    <img src="imgs/CaminhoSelecionado/aresta100.png" id="aresta100" />
+    <img src="imgs/CaminhoSelecionado/aresta101.png" id="aresta101" />
+    <img src="imgs/CaminhoSelecionado/aresta102.png" id="aresta102" />
+    <img src="imgs/CaminhoSelecionado/aresta103.png" id="aresta103" />
+    <img src="imgs/CaminhoSelecionado/aresta104.png" id="aresta104" />
+    <img src="imgs/CaminhoSelecionado/aresta105.png" id="aresta105" />
+    <img src="imgs/CaminhoSelecionado/aresta106.png" id="aresta106" />
+    <img src="imgs/CaminhoSelecionado/aresta107.png" id="aresta107" />
+    <img src="imgs/CaminhoSelecionado/aresta108.png" id="aresta108" />
+    <img src="imgs/CaminhoSelecionado/aresta109.png" id="aresta109" />
+    <img src="imgs/CaminhoSelecionado/aresta110.png" id="aresta110" />
+    <img src="imgs/CaminhoSelecionado/aresta111.png" id="aresta111" />
+    <img src="imgs/CaminhoSelecionado/aresta112.png" id="aresta112" />
+    <img src="imgs/CaminhoSelecionado/aresta113.png" id="aresta113" />
+    <img src="imgs/CaminhoSelecionado/aresta114.png" id="aresta114" />
+    <img src="imgs/CaminhoSelecionado/aresta115.png" id="aresta115" />
+    <img src="imgs/CaminhoSelecionado/aresta116.png" id="aresta116" />
+    <img src="imgs/CaminhoSelecionado/aresta117.png" id="aresta117" />
+    <img src="imgs/CaminhoSelecionado/aresta118.png" id="aresta118" />
+    <img src="imgs/CaminhoSelecionado/aresta119.png" id="aresta119" />
+    <img src="imgs/CaminhoSelecionado/aresta120.png" id="aresta120" />
+     <img src="imgs/CaminhoSelecionado/aresta121.png" id="aresta121" />
+    <img src="imgs/CaminhoSelecionado/aresta122.png" id="aresta122" />
+    <img src="imgs/CaminhoSelecionado/aresta123.png" id="aresta123" />
+    <img src="imgs/CaminhoSelecionado/aresta124.png" id="aresta124" />
+    <img src="imgs/CaminhoSelecionado/aresta125.png" id="aresta125" />
+    <img src="imgs/CaminhoSelecionado/aresta126.png" id="aresta126" />
+    <img src="imgs/CaminhoSelecionado/aresta127.png" id="aresta127" />
+    <img src="imgs/CaminhoSelecionado/aresta128.png" id="aresta128" />
+    <img src="imgs/CaminhoSelecionado/aresta129.png" id="aresta129" />
+    <img src="imgs/CaminhoSelecionado/aresta130.png" id="aresta130" />
+    <img src="imgs/CaminhoSelecionado/aresta131.png" id="aresta131" />
+    <img src="imgs/CaminhoSelecionado/aresta132.png" id="aresta132" />
+    <img src="imgs/CaminhoSelecionado/aresta133.png" id="aresta133" />
+    <img src="imgs/CaminhoSelecionado/aresta134.png" id="aresta134" />
+    <img src="imgs/CaminhoSelecionado/aresta135.png" id="aresta135" />
+    <img src="imgs/CaminhoSelecionado/aresta136.png" id="aresta136" />
+    <img src="imgs/CaminhoSelecionado/aresta137.png" id="aresta137" />
+    <img src="imgs/CaminhoSelecionado/aresta138.png" id="aresta138" />
+    <img src="imgs/CaminhoSelecionado/aresta139.png" id="aresta139" />
+    <img src="imgs/CaminhoSelecionado/aresta140.png" id="aresta140" />
+    <img src="imgs/CaminhoSelecionado/aresta141.png" id="aresta141" />
+    <img src="imgs/CaminhoSelecionado/aresta142.png" id="aresta142" />
+    <img src="imgs/CaminhoSelecionado/aresta143.png" id="aresta143" />
+    <img src="imgs/CaminhoSelecionado/aresta144.png" id="aresta144" />
+    <img src="imgs/CaminhoSelecionado/aresta145.png" id="aresta145" />
+    <img src="imgs/CaminhoSelecionado/aresta146.png" id="aresta146" />
+    <img src="imgs/CaminhoSelecionado/aresta147.png" id="aresta147" />
+    <img src="imgs/CaminhoSelecionado/aresta148.png" id="aresta148" />
+    <img src="imgs/CaminhoSelecionado/aresta149.png" id="aresta149" />
+    <img src="imgs/CaminhoSelecionado/aresta150.png" id="aresta150" />
+    <img src="imgs/CaminhoSelecionado/aresta151.png" id="aresta151" />
+    <img src="imgs/CaminhoSelecionado/aresta152.png" id="aresta152" />
+    <img src="imgs/CaminhoSelecionado/aresta153.png" id="aresta153" />
+    <img src="imgs/CaminhoSelecionado/aresta154.png" id="aresta154" />
+    <img src="imgs/CaminhoSelecionado/aresta155.png" id="aresta155" />
+    <img src="imgs/CaminhoSelecionado/aresta156.png" id="aresta156" />
+    <img src="imgs/CaminhoSelecionado/aresta157.png" id="aresta157" />
+    <img src="imgs/CaminhoSelecionado/aresta158.png" id="aresta158" />
+    <img src="imgs/CaminhoSelecionado/aresta159.png" id="aresta159" />
+    <img src="imgs/CaminhoSelecionado/aresta160.png" id="aresta160" />
+    <img src="imgs/CaminhoSelecionado/aresta161.png" id="aresta161" />
+    <img src="imgs/CaminhoSelecionado/aresta162.png" id="aresta162" />
+    <img src="imgs/CaminhoSelecionado/aresta163.png" id="aresta163" />
+    <img src="imgs/CaminhoSelecionado/aresta164.png" id="aresta164" />
+    <img src="imgs/CaminhoSelecionado/aresta165.png" id="aresta165" />
+    <img src="imgs/CaminhoSelecionado/aresta166.png" id="aresta166" />
+    <img src="imgs/CaminhoSelecionado/aresta167.png" id="aresta167" />
+    <img src="imgs/CaminhoSelecionado/aresta168.png" id="aresta168" />
+    <img src="imgs/CaminhoSelecionado/aresta169.png" id="aresta169" />
+    <img src="imgs/CaminhoSelecionado/aresta170.png" id="aresta170" />
+    <img src="imgs/CaminhoSelecionado/aresta171.png" id="aresta171" />
+    <img src="imgs/CaminhoSelecionado/aresta172.png" id="aresta172" />
+    <img src="imgs/CaminhoSelecionado/aresta173.png" id="aresta173" />
+    <img src="imgs/CaminhoSelecionado/aresta174.png" id="aresta174" />
+    <img src="imgs/CaminhoSelecionado/aresta175.png" id="aresta175" />
+    <img src="imgs/CaminhoSelecionado/aresta176.png" id="aresta176" />
+    <img src="imgs/CaminhoSelecionado/aresta177.png" id="aresta177" />
+    <img src="imgs/CaminhoSelecionado/aresta178.png" id="aresta178" />
+    <img src="imgs/CaminhoSelecionado/aresta179.png" id="aresta179" />
+    <img src="imgs/CaminhoSelecionado/aresta170.png" id="aresta170" />
+    <img src="imgs/CaminhoSelecionado/aresta181.png" id="aresta181" />
+    <img src="imgs/CaminhoSelecionado/aresta182.png" id="aresta182" />
+    <img src="imgs/CaminhoSelecionado/aresta183.png" id="aresta183" />
+    <img src="imgs/CaminhoSelecionado/aresta184.png" id="aresta184" />
+    <img src="imgs/CaminhoSelecionado/aresta185.png" id="aresta185" />
+    <img src="imgs/CaminhoSelecionado/aresta186.png" id="aresta186" />
+    <img src="imgs/CaminhoSelecionado/aresta187.png" id="aresta187" />
+    <img src="imgs/CaminhoSelecionado/aresta188.png" id="aresta188" />
+    <img src="imgs/CaminhoSelecionado/aresta189.png" id="aresta189" />
+    <img src="imgs/CaminhoSelecionado/aresta190.png" id="aresta190" />
+    <img src="imgs/CaminhoSelecionado/aresta191.png" id="aresta191" />
+    <img src="imgs/CaminhoSelecionado/aresta192.png" id="aresta192" />
+    <img src="imgs/CaminhoSelecionado/aresta193.png" id="aresta193" />
+    <img src="imgs/CaminhoSelecionado/aresta194.png" id="aresta194" />
+    <img src="imgs/CaminhoSelecionado/aresta195.png" id="aresta195" />
+    <img src="imgs/CaminhoSelecionado/aresta196.png" id="aresta196" />
+    <img src="imgs/CaminhoSelecionado/aresta197.png" id="aresta197" />
+    <img src="imgs/CaminhoSelecionado/aresta198.png" id="aresta198" />
+    <img src="imgs/CaminhoSelecionado/aresta199.png" id="aresta199" />
+    <img src="imgs/CaminhoSelecionado/aresta200.png" id="aresta200" />
+    <img src="imgs/CaminhoSelecionado/aresta201.png" id="aresta201" />
+    <img src="imgs/CaminhoSelecionado/aresta202.png" id="aresta202" />
+    <img src="imgs/CaminhoSelecionado/aresta203.png" id="aresta203" />
+    <img src="imgs/CaminhoSelecionado/aresta204.png" id="aresta204" />
+    <img src="imgs/CaminhoSelecionado/aresta205.png" id="aresta205" />
+    <img src="imgs/CaminhoSelecionado/aresta206.png" id="aresta206" />
+    <img src="imgs/CaminhoSelecionado/aresta207.png" id="aresta207" />
+    <img src="imgs/CaminhoSelecionado/aresta208.png" id="aresta208" />
+    <img src="imgs/CaminhoSelecionado/aresta209.png" id="aresta209" />
+    <img src="imgs/CaminhoSelecionado/aresta210.png" id="aresta210" />
+    <img src="imgs/CaminhoSelecionado/aresta211.png" id="aresta211" />
+    <img src="imgs/CaminhoSelecionado/aresta212.png" id="aresta212" />
+    <img src="imgs/CaminhoSelecionado/aresta213.png" id="aresta213" />
+    <img src="imgs/CaminhoSelecionado/aresta214.png" id="aresta214" />
+    <img src="imgs/CaminhoSelecionado/aresta215.png" id="aresta215" />
+    <img src="imgs/CaminhoSelecionado/aresta216.png" id="aresta216" />
+    <img src="imgs/CaminhoSelecionado/aresta217.png" id="aresta217" />
+    <img src="imgs/CaminhoSelecionado/aresta218.png" id="aresta218" />
+    <img src="imgs/CaminhoSelecionado/aresta219.png" id="aresta219" />
+    <img src="imgs/CaminhoSelecionado/aresta220.png" id="aresta220" />
+-->
+</div>
 
 <div id="menu">
 	<span id="centralizaMenu">
 	Origem:
 	<select id="origem">
-      <option value="SN 1">SN 1</option>
-      <option value="SN 2">SN 2</option>
-      <option value="SN 3">SN 3</option>
-      <option value="SN 4">SN 4</option>
-      <option value="SN 5">SN 5</option>
-      <option value="SN 6">SN 6</option>
-      <option value="SN 7">SN 7</option>
-      <option value="SN 8">SN 8</option>
-      <option value="SN 9">SN 9</option>
-      <option value="SN 10">SN 10</option>
+      <option value="SN1">SN 1</option>
+      <option value="SN2">SN 2</option>
+      <option value="SN3">SN 3</option>
+      <option value="SN4">SN 4</option>
+      <option value="SN5">SN 5</option>
+      <option value="SN6">SN 6</option>
+      <option value="SN7">SN 7</option>
+      <option value="SN8">SN 8</option>
+      <option value="SN9">SN 9</option>
+      <option value="SN10">SN 10</option>
       
-      <option value="SL 1">SL 1</option>
-      <option value="SL 2">SL 2</option>
-      <option value="SL 3">SL 3</option>
-      <option value="SL 4">SL 4</option>
+      <option value="SL1">SL 1</option>
+      <option value="SL2">SL 2</option>
+      <option value="SL3">SL 3</option>
+      <option value="SL4">SL 4</option>
       
-      <option value="SS 1">SS 1</option>
-      <option value="SS 2">SS 2</option>
-      <option value="SS 3">SS 3</option>
-      <option value="SS 4">SS 4</option>
-      <option value="SS 5">SS 5</option>
+      <option value="SS1">SS 1</option>
+      <option value="SS2">SS 2</option>
+      <option value="SS3">SS 3</option>
+      <option value="SS4">SS 4</option>
+      <option value="SS5">SS 5</option>
       
-      <option value="SO 1">SO 1</option>
-      <option value="SO 2">SO 2</option>
+      <option value="SO1">SO 1</option>
+      <option value="SO2">SO 2</option>
       
       <option value="brazlandia">Brazlândia</option>
       <option value="planaltina">Planaltina</option>
@@ -112,33 +573,33 @@
       <option value="gama">Gama</option>
       <option value="santaMaria">Santa Maria</option>
     </select>
-    
+    <br />
     Destino:
     <select id="destino">
-      <option value="SN 1">SN 1</option>
-      <option value="SN 2">SN 2</option>
-      <option value="SN 3">SN 3</option>
-      <option value="SN 4">SN 4</option>
-      <option value="SN 5">SN 5</option>
-      <option value="SN 6">SN 6</option>
-      <option value="SN 7">SN 7</option>
-      <option value="SN 8">SN 8</option>
-      <option value="SN 9">SN 9</option>
-      <option value="SN 10">SN 10</option>
+      <option value="SN1">SN 1</option>
+      <option value="SN2">SN 2</option>
+      <option value="SN3">SN 3</option>
+      <option value="SN4">SN 4</option>
+      <option value="SN5">SN 5</option>
+      <option value="SN6">SN 6</option>
+      <option value="SN7">SN 7</option>
+      <option value="SN8">SN 8</option>
+      <option value="SN9">SN 9</option>
+      <option value="SN10">SN 10</option>
       
-      <option value="SL 1">SL 1</option>
-      <option value="SL 2">SL 2</option>
-      <option value="SL 3">SL 3</option>
-      <option value="SL 4">SL 4</option>
+      <option value="SL1">SL 1</option>
+      <option value="SL2">SL 2</option>
+      <option value="SL3">SL 3</option>
+      <option value="SL4">SL 4</option>
       
-      <option value="SS 1">SS 1</option>
-      <option value="SS 2">SS 2</option>
-      <option value="SS 3">SS 3</option>
-      <option value="SS 4">SS 4</option>
-      <option value="SS 5">SS 5</option>
+      <option value="SS1">SS 1</option>
+      <option value="SS2">SS 2</option>
+      <option value="SS3">SS 3</option>
+      <option value="SS4">SS 4</option>
+      <option value="SS5">SS 5</option>
       
-      <option value="SO 1">SO 1</option>
-      <option value="SO 2">SO 2</option>
+      <option value="SO1">SO 1</option>
+      <option value="SO2">SO 2</option>
       
       <option value="brazlandia">Brazlândia</option>
       <option value="planaltina">Planaltina</option>
@@ -155,7 +616,7 @@
       <option value="recantoDasEmas">Recanto das Emas</option>
       <option value="gama">Gama</option>
       <option value="santaMaria">Santa Maria</option>
-    </select>
+    </select>  
     </span>
 </div>
 </body>
