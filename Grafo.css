@@ -13,19 +13,25 @@ div#containerMapa {
 img#FundoMapa {
 	position: absolute;
 	left: 0px;
-	top: 0px;
+	top: 7px;
 	z-index: 1;
 }
 img#caminhosNaoSelecionado {
 	position: absolute;
-	left: 25px;
-	top: 0px;
+	left: 26px;
+	top: 10px;
 	z-index: 2;
+}
+span#containerArestasSelecionadas {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 3;	
 }
 img#pinsNaoSelecionado {
 	position: absolute;
-	left: 45px;
-	top: 17px;
+	left: 43px;
+	top: 23px;
 	z-index: 3;
 }
 img#pinSelecionadoOrigem {
@@ -38,8 +44,8 @@ img#pinSelecionadoDestino {
 }
 img#Labels {
 	position: absolute;
-	left: 2px;
-	top: -7px;
+	left: 6px;
+	top: 4px;
 	z-index: 6;
 }
 div#menu {

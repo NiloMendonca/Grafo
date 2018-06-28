@@ -5,259 +5,906 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 	coordenadasPins = {	
-					1:{x: 107, y: 20, nome: 'SN1'},
-					2:{x: 194, y: 20, nome: 'SN2'},
-					3:{x: 295, y: 20, nome: 'SN3'},
-					4:{x: 345, y: 20, nome: 'SN4'},
-					5:{x: 460, y: 20, nome: 'SN5'},
-					6:{x: 494, y: 20, nome: 'SN6'},
-					7:{x: 707, y: 20, nome: 'SN7'},
-					8:{x: 782, y: 20, nome: 'SN8'},
-					9:{x: 857, y: 20, nome: 'SN9'},
-					10:{x: 930, y: 20, nome: 'SN10'},
-					11:{x: 1008, y: 77, nome: 'SL1'},
-					12:{x: 1062, y: 117, nome: 'SL2'},
-					13:{x: 1082, y: 289, nome: 'SL3'},
-					14:{x: 1083, y: 640, nome: 'SL4'},
-					15:{x: 42, y: 660, nome: 'SS1'},
-					16:{x: 337, y: 660, nome: 'SS2'},
-					17:{x: 504, y: 660, nome: 'SS3'},
-					18:{x: 759, y: 660, nome: 'SS4'},
-					19:{x: 955, y: 660, nome: 'SS5'},
-					20:{x: 58, y: 362, nome: 'SO1'},
-					21:{x: 46, y: 546, nome: 'SO2'},
-					22:{x: 96, y: 230, nome: 'brazlandia'},
-					23:{x: 719, y: 163, nome: 'planaltina'},
-					24:{x: 562, y: 205, nome: 'sobradinho'},
-					25:{x: 553, y: 300, nome: 'paranoa'},
-					26:{x: 368, y: 362, nome: 'cruzeiro'},
-					27:{x: 190, y: 360, nome: 'ceilandia'},
-					28:{x: 250, y: 400, nome: 'taguatinga'},
-					29:{x: 332, y: 398, nome: 'guara'},
-					30:{x: 240, y: 467, nome: 'samambaia'},
-					31:{x: 311, y: 463, nome: 'nucleoBandeirante'},
-					32:{x: 415, y: 470, nome: 'aeroporto'},
-					33:{x: 578, y: 500, nome: 'saoSebastiao'},
-					34:{x: 212, y: 512, nome: 'recantoDasEmas'},
-					35:{x: 240, y: 629, nome: 'gama'},
-					36:{x: 334, y: 628, nome: 'santaMaria'}
+		1:{x: 107, y: 20, nome: 'SN1'},
+		2:{x: 194, y: 20, nome: 'SN2'},
+		3:{x: 295, y: 20, nome: 'SN3'},
+		4:{x: 345, y: 20, nome: 'SN4'},
+		5:{x: 460, y: 20, nome: 'SN5'},
+		6:{x: 494, y: 20, nome: 'SN6'},
+		7:{x: 707, y: 20, nome: 'SN7'},
+		8:{x: 782, y: 20, nome: 'SN8'},
+		9:{x: 857, y: 20, nome: 'SN9'},
+		10:{x: 930, y: 20, nome: 'SN10'},
+		11:{x: 1008, y: 77, nome: 'SL1'},
+		12:{x: 1062, y: 117, nome: 'SL2'},
+		13:{x: 1082, y: 289, nome: 'SL3'},
+		14:{x: 1083, y: 640, nome: 'SL4'},
+		15:{x: 42, y: 660, nome: 'SS1'},
+		16:{x: 337, y: 660, nome: 'SS2'},
+		17:{x: 504, y: 660, nome: 'SS3'},
+		18:{x: 759, y: 660, nome: 'SS4'},
+		19:{x: 955, y: 660, nome: 'SS5'},
+		20:{x: 58, y: 362, nome: 'SO1'},
+		21:{x: 46, y: 546, nome: 'SO2'},
+		22:{x: 96, y: 230, nome: 'brazlandia'},
+		23:{x: 719, y: 163, nome: 'planaltina'},
+		24:{x: 562, y: 205, nome: 'sobradinho'},
+		25:{x: 553, y: 300, nome: 'paranoa'},
+		26:{x: 368, y: 362, nome: 'cruzeiro'},
+		27:{x: 190, y: 360, nome: 'ceilandia'},
+		28:{x: 250, y: 400, nome: 'taguatinga'},
+		29:{x: 332, y: 398, nome: 'guara'},
+		30:{x: 240, y: 467, nome: 'samambaia'},
+		31:{x: 311, y: 463, nome: 'nucleoBandeirante'},
+		32:{x: 415, y: 470, nome: 'aeroporto'},
+		33:{x: 578, y: 500, nome: 'saoSebastiao'},
+		34:{x: 212, y: 512, nome: 'recantoDasEmas'},
+		35:{x: 240, y: 629, nome: 'gama'},
+		36:{x: 334, y: 628, nome: 'santaMaria'}
 	};
 	
-	coordenadasArestas = {
-					1:{x: 90, y: 3, w: 81, h: 96, nome: 'Aresta1'},
-					2:{x: 105, y: 28, w: 96, h: 72, nome: 'Aresta2'},
-					3:{x: 134, y: 3, w: 105, h: 92, nome: 'Aresta3'},
-					4:{x: 96, y: 32, w: 82, h: 124, nome: 'Aresta4'},
-					5:{x: 110, y: 26, w: 94, h: 132, nome: 'Aresta5'},
-					6:{x: 97, y: 91, w: 80, h: 108, nome: 'Aresta6'},
-					7:{x: 96, y: 116, w: 127, h: 85, nome: 'Aresta7'},
-					8:{x: 157, y: 107, w: 132, h: 82, nome: 'Aresta8'},
-					9:{x: 221, y: 88, w: 121, h: 104, nome: 'Aresta9'},
-					10:{x: 267, y: 3, w: 77, h: 151, nome: 'Aresta10'},
-					11:{x: 76, y: 132, w: 88, h: 95, nome: 'Aresta11'},
-					12:{x: 153, y: 115, w: 71, h: 98, nome: 'Aresta12'},
-					13:{x: 200, y: 122, w: 93, h: 95, nome: 'Aresta13'},
-					14:{x: 74, y: 149, w: 150, h: 86, nome: 'Aresta14'},
-					15:{x: 159, y: 147, w: 110, h: 70, nome: 'Aresta15'},
-					16:{x: , y: , w: , h: , nome: 'Aresta16'},
-					17:{x: , y: , w: , h: , nome: 'Aresta17'},
-					18:{x: , y: , w: , h: , nome: 'Aresta18'},
-					19:{x: , y: , w: , h: , nome: 'Aresta19'},
-					20:{x: , y: , w: , h: , nome: 'Aresta20'},
-					21:{x: , y: , w: , h: , nome: 'Aresta21'},
-					22:{x: , y: , w: , h: , nome: 'Aresta22'},
-					23:{x: , y: , w: , h: , nome: 'Aresta23'},
-					24:{x: , y: , w: , h: , nome: 'Aresta24'},
-					25:{x: , y: , w: , h: , nome: 'Aresta25'},
-					26:{x: , y: , w: , h: , nome: 'Aresta26'},
-					27:{x: , y: , w: , h: , nome: 'Aresta27'},
-					28:{x: , y: , w: , h: , nome: 'Aresta28'},
-					29:{x: , y: , w: , h: , nome: 'Aresta29'},
-					30:{x: , y: , w: , h: , nome: 'Aresta03'},
-					31:{x: , y: , w: , h: , nome: 'Aresta31'},
-					32:{x: , y: , w: , h: , nome: 'Aresta32'},
-					33:{x: , y: , w: , h: , nome: 'Aresta33'},
-					34:{x: , y: , w: , h: , nome: 'Aresta34'},
-					35:{x: , y: , w: , h: , nome: 'Aresta35'},
-					36:{x: , y: , w: , h: , nome: 'Aresta36'},
-					37:{x: , y: , w: , h: , nome: 'Aresta37'},
-					38:{x: , y: , w: , h: , nome: 'Aresta38'},
-					39:{x: , y: , w: , h: , nome: 'Aresta39'},
-					40:{x: , y: , w: , h: , nome: 'Aresta40'},
-					41:{x: , y: , w: , h: , nome: 'Aresta41'},
-					42:{x: , y: , w: , h: , nome: 'Aresta42'},
-					43:{x: , y: , w: , h: , nome: 'Aresta43'},
-					44:{x: 239, y: 369, w: 167, h: 94, nome: 'Aresta44'},
-					45:{x: , y: , w: , h: , nome: 'Aresta45'},
-					46:{x: 57, y: 395, w: 132, h: 101, nome: 'Aresta46'},
-					47:{x: 123, y: 394, w: 182, h: 102, nome: 'Aresta47'},
-					48:{x: 238, y: 398, w: 79, h: 87, nome: 'Aresta48'},
-					49:{x: 329, y: 370, w: 76, h: 133, nome: 'Aresta49'},
-					50:{x: 25, y: 396, w: 100, h: 182, nome: 'Aresta50'},
-					51:{x: , y: , w: , h: , nome: 'Aresta51'},
-					52:{x: , y: , w: , h: , nome: 'Aresta52'},
-					53:{x: , y: , w: , h: , nome: 'Aresta53'},
-					54:{x: , y: , w: , h: , nome: 'Aresta54'},
-					55:{x: , y: , w: , h: , nome: 'Aresta55'},
-					56:{x: , y: , w: , h: , nome: 'Aresta56'},
-					57:{x: , y: , w: , h: , nome: 'Aresta57'},
-					58:{x: , y: , w: , h: , nome: 'Aresta58'},
-					59:{x: , y: , w: , h: , nome: 'Aresta59'},
-					60:{x: , y: , w: , h: , nome: 'Aresta60'},
-					61:{x: , y: , w: , h: , nome: 'Aresta61'},
-					62:{x: , y: , w: , h: , nome: 'Aresta62'},
-					63:{x: , y: , w: , h: , nome: 'Aresta63'},
-					64:{x: , y: , w: , h: , nome: 'Aresta64'},
-					65:{x: , y: , w: , h: , nome: 'Aresta65'},
-					66:{x: , y: , w: , h: , nome: 'Aresta66'},
-					67:{x: , y: , w: , h: , nome: 'Aresta67'},
-					68:{x: , y: , w: , h: , nome: 'Aresta68'},
-					69:{x: , y: , w: , h: , nome: 'Aresta69'},
-					70:{x: , y: , w: , h: , nome: 'Aresta70'},
-					71:{x: , y: , w: , h: , nome: 'Aresta71'},
-					72:{x: , y: , w: , h: , nome: 'Aresta72'},
-					73:{x: , y: , w: , h: , nome: 'Aresta73'},
-					74:{x: , y: , w: , h: , nome: 'Aresta74'},
-					75:{x: , y: , w: , h: , nome: 'Aresta75'},
-					76:{x: , y: , w: , h: , nome: 'Aresta76'},
-					77:{x: , y: , w: , h: , nome: 'Aresta77'},
-					78:{x: , y: , w: , h: , nome: 'Aresta78'},
-					79:{x: , y: , w: , h: , nome: 'Aresta79'},
-					80:{x: , y: , w: , h: , nome: 'Aresta80'},
-					81:{x: , y: , w: , h: , nome: 'Aresta81'},
-					82:{x: , y: , w: , h: , nome: 'Aresta82'},
-					83:{x: , y: , w: , h: , nome: 'Aresta83'},
-					84:{x: , y: , w: , h: , nome: 'Aresta84'},
-					85:{x: , y: , w: , h: , nome: 'Aresta85'},
-					86:{x: , y: , w: , h: , nome: 'Aresta86'},
-					87:{x: , y: , w: , h: , nome: 'Aresta87'},
-					88:{x: , y: , w: , h: , nome: 'Aresta88'},
-					89:{x: , y: , w: , h: , nome: 'Aresta89'},
-					90:{x: , y: , w: , h: , nome: 'Aresta90'},
-					91:{x: , y: , w: , h: , nome: 'Aresta91'},
-					92:{x: , y: , w: , h: , nome: 'Aresta92'},
-					93:{x: , y: , w: , h: , nome: 'Aresta93'},
-					94:{x: , y: , w: , h: , nome: 'Aresta94'},
-					95:{x: , y: , w: , h: , nome: 'Aresta95'},
-					96:{x: , y: , w: , h: , nome: 'Aresta96'},
-					97:{x: , y: , w: , h: , nome: 'Aresta97'},
-					98:{x: , y: , w: , h: , nome: 'Aresta98'},
-					99:{x: , y: , w: , h: , nome: 'Aresta99'},
-					100:{x: , y: , w: , h: , nome: 'Aresta100'},
-					101:{x: , y: , w: , h: , nome: 'Aresta101'},
-					102:{x: , y: , w: , h: , nome: 'Aresta102'},
-					103:{x: , y: , w: , h: , nome: 'Aresta103'},
-					104:{x: , y: , w: , h: , nome: 'Aresta104'},
-					105:{x: , y: , w: , h: , nome: 'Aresta105'},
-					106:{x: , y: , w: , h: , nome: 'Aresta106'},
-					107:{x: , y: , w: , h: , nome: 'Aresta107'},
-					108:{x: , y: , w: , h: , nome: 'Aresta108'},
-					109:{x: , y: , w: , h: , nome: 'Aresta109'},
-					110:{x: , y: , w: , h: , nome: 'Aresta110'},
-					111:{x: , y: , w: , h: , nome: 'Aresta111'},
-					112:{x: , y: , w: , h: , nome: 'Aresta112'},
-					113:{x: , y: , w: , h: , nome: 'Aresta113'},
-					114:{x: , y: , w: , h: , nome: 'Aresta114'},
-					115:{x: , y: , w: , h: , nome: 'Aresta115'},
-					116:{x: , y: , w: , h: , nome: 'Aresta116'},
-					117:{x: , y: , w: , h: , nome: 'Aresta117'},
-					118:{x: , y: , w: , h: , nome: 'Aresta118'},
-					119:{x: , y: , w: , h: , nome: 'Aresta119'},
-					120:{x: , y: , w: , h: , nome: 'Aresta120'},
-					121:{x: , y: , w: , h: , nome: 'Aresta121'},
-					122:{x: , y: , w: , h: , nome: 'Aresta122'},
-					123:{x: , y: , w: , h: , nome: 'Aresta123'},
-					124:{x: , y: , w: , h: , nome: 'Aresta124'},
-					125:{x: , y: , w: , h: , nome: 'Aresta125'},
-					126:{x: , y: , w: , h: , nome: 'Aresta126'},
-					127:{x: , y: , w: , h: , nome: 'Aresta127'},
-					128:{x: , y: , w: , h: , nome: 'Aresta128'},
-					129:{x: , y: , w: , h: , nome: 'Aresta129'},
-					130:{x: , y: , w: , h: , nome: 'Aresta130'},
-					131:{x: , y: , w: , h: , nome: 'Aresta131'},
-					132:{x: , y: , w: , h: , nome: 'Aresta132'},
-					133:{x: , y: , w: , h: , nome: 'Aresta133'},
-					134:{x: , y: , w: , h: , nome: 'Aresta134'},
-					135:{x: , y: , w: , h: , nome: 'Aresta135'},
-					136:{x: , y: , w: , h: , nome: 'Aresta136'},
-					137:{x: , y: , w: , h: , nome: 'Aresta137'},
-					138:{x: , y: , w: , h: , nome: 'Aresta138'},
-					139:{x: , y: , w: , h: , nome: 'Aresta139'},
-					140:{x: , y: , w: , h: , nome: 'Aresta140'},
-					141:{x: , y: , w: , h: , nome: 'Aresta141'},
-					142:{x: , y: , w: , h: , nome: 'Aresta142'},
-					143:{x: , y: , w: , h: , nome: 'Aresta143'},
-					144:{x: , y: , w: , h: , nome: 'Aresta144'},
-					145:{x: , y: , w: , h: , nome: 'Aresta145'},
-					146:{x: , y: , w: , h: , nome: 'Aresta146'},
-					147:{x: , y: , w: , h: , nome: 'Aresta147'},
-					148:{x: , y: , w: , h: , nome: 'Aresta148'},
-					149:{x: , y: , w: , h: , nome: 'Aresta149'},
-					150:{x: , y: , w: , h: , nome: 'Aresta150'},
-					151:{x: , y: , w: , h: , nome: 'Aresta151'},
-					152:{x: , y: , w: , h: , nome: 'Aresta152'},
-					153:{x: , y: , w: , h: , nome: 'Aresta153'},
-					154:{x: , y: , w: , h: , nome: 'Aresta154'},
-					155:{x: , y: , w: , h: , nome: 'Aresta155'},
-					156:{x: , y: , w: , h: , nome: 'Aresta156'},
-					157:{x: , y: , w: , h: , nome: 'Aresta157'},
-					158:{x: , y: , w: , h: , nome: 'Aresta158'},
-					159:{x: , y: , w: , h: , nome: 'Aresta159'},
-					160:{x: , y: , w: , h: , nome: 'Aresta160'},
-					161:{x: , y: , w: , h: , nome: 'Aresta161'},
-					162:{x: , y: , w: , h: , nome: 'Aresta162'},
-					163:{x: , y: , w: , h: , nome: 'Aresta163'},
-					164:{x: , y: , w: , h: , nome: 'Aresta164'},
-					165:{x: , y: , w: , h: , nome: 'Aresta165'},
-					166:{x: , y: , w: , h: , nome: 'Aresta166'},
-					167:{x: , y: , w: , h: , nome: 'Aresta167'},
-					168:{x: , y: , w: , h: , nome: 'Aresta168'},
-					169:{x: , y: , w: , h: , nome: 'Aresta169'},
-					170:{x: , y: , w: , h: , nome: 'Aresta170'},
-					171:{x: , y: , w: , h: , nome: 'Aresta171'},
-					172:{x: , y: , w: , h: , nome: 'Aresta172'},
-					173:{x: , y: , w: , h: , nome: 'Aresta173'},
-					174:{x: , y: , w: , h: , nome: 'Aresta174'},
-					175:{x: , y: , w: , h: , nome: 'Aresta175'},
-					176:{x: , y: , w: , h: , nome: 'Aresta176'},
-					177:{x: , y: , w: , h: , nome: 'Aresta177'},
-					178:{x: , y: , w: , h: , nome: 'Aresta178'},
-					179:{x: , y: , w: , h: , nome: 'Aresta179'},
-					180:{x: , y: , w: , h: , nome: 'Aresta180'},
-					181:{x: , y: , w: , h: , nome: 'Aresta181'},
-					182:{x: , y: , w: , h: , nome: 'Aresta182'},
-					183:{x: , y: , w: , h: , nome: 'Aresta183'},
-					184:{x: , y: , w: , h: , nome: 'Aresta184'},
-					185:{x: , y: , w: , h: , nome: 'Aresta185'},
-					186:{x: , y: , w: , h: , nome: 'Aresta186'},
-					187:{x: , y: , w: , h: , nome: 'Aresta187'},
-					188:{x: , y: , w: , h: , nome: 'Aresta188'},
-					189:{x: , y: , w: , h: , nome: 'Aresta189'},
-					190:{x: , y: , w: , h: , nome: 'Aresta190'},
-					191:{x: , y: , w: , h: , nome: 'Aresta191'},
-					192:{x: , y: , w: , h: , nome: 'Aresta192'},
-					193:{x: , y: , w: , h: , nome: 'Aresta193'},
-					194:{x: , y: , w: , h: , nome: 'Aresta194'},
-					195:{x: , y: , w: , h: , nome: 'Aresta195'},
-					196:{x: , y: , w: , h: , nome: 'Aresta196'},
-					197:{x: , y: , w: , h: , nome: 'Aresta197'},
-					198:{x: , y: , w: , h: , nome: 'Aresta198'},
-					199:{x: , y: , w: , h: , nome: 'Aresta199'},
-					200:{x: , y: , w: , h: , nome: 'Aresta200'},
-					201:{x: , y: , w: , h: , nome: 'Aresta201'},
-					202:{x: , y: , w: , h: , nome: 'Aresta202'},
-					203:{x: , y: , w: , h: , nome: 'Aresta203'},
-					204:{x: , y: , w: , h: , nome: 'Aresta204'},
-					205:{x: , y: , w: , h: , nome: 'Aresta205'},
-					206:{x: , y: , w: , h: , nome: 'Aresta206'},
-					207:{x: , y: , w: , h: , nome: 'Aresta207'},
-					208:{x: , y: , w: , h: , nome: 'Aresta208'},
-					209:{x: , y: , w: , h: , nome: 'Aresta209'},
-					210:{x: , y: , w: , h: , nome: 'Aresta210'},
-					211:{x: , y: , w: , h: , nome: 'Aresta211'},
-					212:{x: , y: , w: , h: , nome: 'Aresta212'},
-					213:{x: , y: , w: , h: , nome: 'Aresta213'}
+	
+  	cruzamentos = {
+		1:{nome:'1-2-4', arestas:
+			{1: arestas[1],
+			 2: arestas[2],
+			 3: arestas[4]},
+			},
+		2:{nome:'2-3-5', arestas:
+			{1: arestas[2],
+			 2: arestas[3],
+			 3: arestas[5]},
+			},
+		3:{nome:'4-5-6', arestas:
+			{1: arestas[4],
+			 2: arestas[5],
+			 3: arestas[6]},
+			},
+		4:{nome:'6-7-11', arestas:
+			{1: arestas[6],
+			 2: arestas[7],
+			 3: arestas[11]},
+			},
+		5:{nome:'7-8-12', arestas:
+			{1: arestas[7],
+			 2: arestas[8],
+			 3: arestas[12]},
+			},
+		6:{nome:'8-9-13', arestas:
+			{1: arestas[8],
+			 2: arestas[9],
+			 3: arestas[13]},
+			},
+		7:{nome:'9-10-99', arestas:
+			{1: arestas[9],
+			 2: arestas[10],
+			 3: arestas[99]},
+			},
+		8:{nome:'11-14-18', arestas:
+			{1: arestas[11],
+			 2: arestas[14],
+			 3: arestas[18]},
+			},
+		9:{nome:'12-14-15-16', arestas:
+			{1: arestas[12],
+			 2: arestas[14],
+			 3: arestas[15],
+			 4: arestas[16]},
+			},
+		10:{nome:'13-15-17', arestas:
+			{1: arestas[13],
+			 2: arestas[15],
+			 3: arestas[17]},
+			},
+		11:{nome:'16-19-20-22', arestas:
+			{1: arestas[16],
+			 2: arestas[19],
+			 3: arestas[20],
+			 4: arestas[22]},
+			},
+		12:{nome:'17-20-23', arestas:
+			{1: arestas[7],
+			 2: arestas[20],
+			 3: arestas[23]},
+			},
+		13:{nome:'18-19-21', arestas:
+			{1: arestas[18],
+			 2: arestas[19],
+			 3: arestas[21]},
+			},
+		14:{nome:'21-24-28', arestas:
+			{1: arestas[21],
+			 2: arestas[24],
+			 3: arestas[28]},
+			},
+		15:{nome:'22-24-25-26', arestas:
+			{1: arestas[22],
+			 2: arestas[24],
+			 3: arestas[25],
+			 3: arestas[26]},
+			},
+		16:{nome:'23-25-27', arestas:
+			{1: arestas[23],//------------------------------------------------------------
+			 2: arestas[25],
+			 3: arestas[27]},
+			},
+		17:{nome:'26-28-29', arestas: 
+			{1: arestas[1], 
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		18:{nome:'28-30-33', arestas:
+			{1: arestas[1],
+			 2: arestas[2],
+			 3: arestas[4]},
+			},
+		19:{nome:'27-30-31', arestas: 
+			{1: arestas[1], 
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		20:{nome:'31-34-35', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		21:{nome:'32-37-38', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		22:{nome:'36-37-42', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		23:{nome:'33-38-39', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		24:{nome:'34-39-40-43', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		25:{nome:'35-40-41', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		26:{nome:'42-46-50', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		27:{nome:'46-47-51', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		28:{nome:'50-58-59', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		29:{nome:'59-60-63', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		30:{nome:'51-52-60-trocar', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		31:{nome:'trocar-61-64', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		32:{nome:'64-68-69', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		33:{nome:'63-67-68', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		34:{nome:'69-70-75', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		35:{nome:'65-70-71-72', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		36:{nome:'69-70-75', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		37:{nome:'61-62-65', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		38:{nome:'52-53-62', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		39:{nome:'53-54-56', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		40:{nome:'48-54-55', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		41:{nome:'43-44-47-48', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		42:{nome:'41-45-98', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		43:{nome:'44-45-49', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		44:{nome:'55-56-57', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		45:{nome:'49-57-66-78-79', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		46:{nome:'66-71-73', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		47:{nome:'72-73-74', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		48:{nome:'74-76-77', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},			 
+		49:{nome:'77-78-83', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		50:{nome:'79-80-81', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		51:{nome:'81-82-91', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		52:{nome:'83-84-86', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		53:{nome:'82-84-85-89', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		54:{nome:'85-86-87-88', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		55:{nome:'88-90-96', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		56:{nome:'91-92-93', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		57:{nome:'89-90-92', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		58:{nome:'93-94-95', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		59:{nome:'95-97-110', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		60:{nome:'97-98-99', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		61:{nome:'100-101-102', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		62:{nome:'101-103-106', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		63:{nome:'103-104-105-113', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		64:{nome:'106-107-117', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		65:{nome:'105-114-118', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		66:{nome:'108-109-116', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		67:{nome:'109-112-119', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		68:{nome:'110-111-112', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		69:{nome:'113-195-196', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		70:{nome:'114-196-197-19', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		71:{nome:'198-199-200', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		72:{nome:'115-200-201', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		73:{nome:'202-203-204', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		74:{nome:'199-193-204', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		75:{nome:'172-184-203', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		76:{nome:'184-185-192-193', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		77:{nome:'183-185-186', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		78:{nome:'172-173-183', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		79:{nome:'111-120-121-171', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		80:{nome:'120-122-123', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		81:{nome:'123-124-125', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		82:{nome:'121-129-130', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		83:{nome:'122-129-128', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		84:{nome:'124-127-128-133', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		85:{nome:'130-131-132', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		86:{nome:'126-127-134-136', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		87:{nome:'96-135-139-143-146', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		88:{nome:'143-144-145', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		89:{nome:'146-147-148', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		90:{nome:'145-148-149', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		91:{nome:'147-150-153', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		92:{nome:'139-140-153', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		93:{nome:'136-140-141', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		94:{nome:'126-127-134-136', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		95:{nome:'150-151-152-154', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		96:{nome:'138-142-154', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		97:{nome:'137-141-142', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		98:{nome:'138-155-156', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		99:{nome:'134-137-155-157', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		100:{nome:'156-158-168', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		101:{nome:'131-162-169', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		102:{nome:'161-162-168', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+		103:{nome:'132-161-168', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+	    104:{nome:'133-157-168', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+	    105:{nome:'158-159-160', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+	    106:{nome:'159-163-164-165', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+	    107:{nome:'160-163-166-167', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+    	108:{nome:'166-169-170', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+	    109:{nome:'170-173-174-182', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+    	110:{nome:'167-174-175-177', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+	    111:{nome:'165-175-176', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+	    112:{nome:'176-178-179', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+    	113:{nome:'177-178-180-181', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+	    114:{nome:'180-182-186-188', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+	    115:{nome:'187-188-189', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+	    116:{nome:'187-191-192', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+	    117:{nome:'190-189', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+	    118:{nome:'190-191-194', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+	    119:{nome:'194-195-197', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+	    120:{nome:'h-201-202', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+	    121:{nome:'a-c-d-117', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+	    122:{nome:'a-b-116', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+	    123:{nome:'b-d-e', arestas: 
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+    	124:{nome:'c-d-f-118', arestas:
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+	    125:{nome:'e-f-115-119', arestas:
+			{1: arestas[1],
+			 2: arestas[2], 
+			 3: arestas[4]},
+			},
+  	};
+	
+  	//console.log(cruzamentos[1]);
+	
+	arestas = {
+		1:{x: 90, y: 3, w: 81, h: 96, nome: '1', peso: 3 },
+		2:{x: 105, y: 28, w: 96, h: 72, nome: '2',  peso: 2 },
+		3:{x: 134, y: 3, w: 105, h: 92, nome: '3',  peso: 4 },
+		4:{x: 96, y: 32, w: 82, h: 124, nome: '4',  peso: 5 },
+		5:{x: 110, y: 26, w: 94, h: 132, nome: '5',  peso: 6 },
+		6:{x: 97, y: 91, w: 80, h: 108, nome: '6',  peso: 4 },
+		7:{x: 96, y: 116, w: 127, h: 85, nome: '7',  peso: 5 },
+		8:{x: 157, y: 107, w: 132, h: 82, nome: '8',  peso: 7 },
+		9:{x: 221, y: 88, w: 121, h: 104, nome: '9',  peso: 6 },
+		10:{x: 267, y: 3, w: 77, h: 151, nome: '10',  peso: 8 },
+		11:{x: 76, y: 132, w: 88, h: 95, nome: '11',  peso: 2 },
+		12:{x: 153, y: 115, w: 71, h: 98, nome: '12',  peso: 2 },
+		13:{x: 200, y: 122, w: 93, h: 95, nome: '13',  peso: 3 },
+		14:{x: 74, y: 149, w: 150, h: 86, nome: '14',  peso: 6 },
+		15:{x: 159, y: 147, w: 110, h: 70, nome: '15',  peso: 3 },
+		16:{x: 147, y: 147, w: 80, h: 121, nome: '16',  peso: 5 },
+		17:{x: 147, y: 147, w: 80, h: 121, nome: '16',  peso: 5 }, // aqui
+		18:{x: 70, y: 162, w: 73, h: 114, nome: '18',  peso: 4 },
+		19:{x: 76, y: 202, w: 138, h: 75, nome: '19',  peso: 5 },
+		20:{x: 148, y: 202, w: 106, h: 69, nome: '20',  peso: 3 },
+		21:{x: 73, y: 207, w: 74, h: 115, nome: '21',  peso: 4 },
+		22:{x: 139, y: 200, w: 75, h: 106, nome: '22',  peso: 3 },
+		23:{x: 187, y: 203, w: 78, h: 116, nome: '23',  peso: 4 },
+		24:{x: 82, y: 241, w: 124, h: 83, nome: '24',  peso: 4 },
+		25:{x: 139, y: 240, w: 128, h: 82, nome: '25',  peso: 4 },
+		26:{x: 111, y: 244, w: 93, h: 102, nome: '26',  peso: 3 },
+		27:{x: 198, y: 253, w: 77, h: 98, nome: '27',  peso: 2 },
+		28:{x: 81, y: 257, w: 98, h: 88, nome: '28',  peso: 2 },
+		29:{x: 115, y: 279, w: 133, h: 76, nome: '29',  peso: 3 },
+		30:{x: 181, y: 284, w: 128, h: 82, nome: '30',  peso: 2 },
+		31:{x: 684, y: 0, w: 69, h: 76, nome: '31',  peso: 1 },
+		32:{x: 87, y: 279, w: 91, h: 135, nome: '32',  peso: 5 },
+		33:{x: 169, y: 286, w: 77, h: 123, nome: '33',  peso: 4 },
+		34:{x: 234, y: 300, w: 79, h: 122, nome: '34',  peso: 4 },
+		35:{x: 240, y: 277, w: 143, h: 142, nome: '35',  peso: 7 },
+		36:{x: 39, y: 335, w: 101, h: 75, nome: '36',  peso: 3 },
+		37:{x: 74, y: 344, w: 80, h: 70, nome: '37',  peso: 1 },
+		38:{x: 89, y: 340, w: 148, h: 82, nome: '38',  peso: 4 },
+		39:{x: 169, y: 341, w: 131, h: 79, nome: '39',  peso: 4 },
+		40:{x: 235, y: 346, w: 146, h: 80, nome: '40',  peso: 5 },
+		41:{x: 338, y: 342, w: 76, h: 95, nome: '41',  peso: 2 },
+		42:{x: 56, y: 344, w: 87, h: 117, nome: '42',  peso: 4 },
+		43:{x: 228, y: 356, w: 73, h: 90, nome: '43',  peso: 1 },
+		44:{x: 239, y: 369, w: 167, h: 94, nome: '44',  peso: 7 },
+		45:{x: 315, y: 340, w: 100, h: 85, nome: '45',  peso: 2 },
+		46:{x: 57, y: 395, w: 132, h: 101, nome: '46',  peso: 5 },
+		47:{x: 123, y: 394, w: 182, h: 102, nome: '47',  peso: 8 },
+		48:{x: 238, y: 398, w: 79, h: 87, nome: '48',  peso: 1 },
+		49:{x: 329, y: 370, w: 76, h: 133, nome: '49',  peso: 3 },
+		50:{x: 25, y: 396, w: 100, h: 182, nome: '50',  peso: 10 },
+		51:{x: 122, y: 429, w: 100, h: 118, nome: '51',  peso: 4 },
+		52:{x: 154, y: 441, w: 134, h: 106, nome: '52',  peso: 5 },
+		53:{x: 228, y: 379, w: 76, h: 85, nome: '53',  peso: 1 },
+		54:{x: 222, y: 415, w: 97, h: 92, nome: '54',  peso: 1 },
+		55:{x: 252, y: 419, w: 82, h: 85, nome: '55',  peso: 1 },
+		56:{x: 235, y: 434, w: 101, h: 74, nome: '56',  peso: 1 },
+		57:{x: 292, y: 435, w: 106, h: 74, nome: '57',  peso: 3 },
+		58:{x: 24, y: 513, w: 101, h: 78, nome: '58',  peso: 2 },
+		59:{x: 58, y: 492, w: 136, h: 89, nome: '59',  peso: 4 },
+		60:{x: 129, y: 482, w: 89, h: 88, nome: '60',  peso: 2 },
+		61:{x: 147, y: 147, w: 80, h: 121, nome: '16',  peso: 5 }, // aqui
+		62:{x: 225, y: 441, w: 76, h: 100, nome: '62',  peso: 2 },
+		63:{x: 26, y: 503, w: 171, h: 171, nome: '63',  peso: 10 },
+		64:{x: 136, y: 504, w: 76, h: 157, nome: '64',  peso: 6 },
+		65:{x: 234, y: 473, w: 93, h: 149, nome: '65',  peso: 6 },
+		66:{x: 300, y: 436, w: 97, h: 166, nome: '66',  peso: 6 },
+		67:{x: 18, y: 608, w: 75, h: 98, nome: '67',  peso: 2 },
+		68:{x: 28, y: 592, w: 187, h: 88, nome: '68',  peso: 7 },
+		69:{x: 146, y: 592, w: 140, h: 82, nome: '69',  peso: 5 },
+		70:{x: 222, y: 556, w: 106, h: 116, nome: '70',  peso: 4 },
+		71:{x: 260, y: 235, w: 106, h: 88, nome: '71',  peso: 3 },
+		72:{x: 262, y: 556, w: 108, h: 81, nome: '72',  peso: 3 },
+		73:{x: 301, y: 535, w: 70, h: 101, nome: '73',  peso: 2 },
+		74:{x: 304, y: 567, w: 76, h: 70, nome: '74',  peso: 1 },
+		75:{x: 220, y: 571, w: 150, h: 103, nome: '75',  peso: 5 },
+		76:{x: 309, y: 566, w: 81, h: 134, nome: '76',  peso: 4 },
+		77:{x: 315, y: 550, w: 169, h: 83, nome: '77',  peso: 6 },
+		78:{x: 334, y: 433, w: 148, h: 184, nome: '78',  peso: 9 },
+		79:{x: 331, y: 416, w: 113, h: 86, nome: '79',  peso: 2 },
+		80:{x: 373, y: 415, w: 86, h: 106, nome: '80',  peso: 2 },
+		81:{x: 377, y: 378, w: 150, h: 112, nome: '81',  peso: 5 },
+		82:{x: 430, y: 424, w: 114, h: 151, nome: '82',  peso: 5 },
+		83:{x: 417, y: 524, w: 118, h: 92, nome: '83',  peso: 3 },
+		84:{x: 468, y: 521, w: 82, h: 71, nome: '84',  peso: 1 },
+		85:{x: 467, y: 509, w: 76, h: 82, nome: '85',  peso: 1 },
+		86:{x: 477, y: 507, w: 72, h: 81, nome: '86',  peso: 1 },
+		87:{x: 478, y: 522, w: 99, h: 182, nome: '87',  peso: 7 },
+		88:{x: 482, y: 521, w: 138, h: 80, nome: '88',  peso: 4 },
+		89:{x: 478, y: 444, w: 84, h: 129, nome: '89',  peso: 4 },
+		90:{x: 494, y: 447, w: 137, h: 142, nome: '90',  peso: 7 },
+		91:{x: 444, y: 411, w: 94, h: 82, nome: '91',  peso: 2 },
+		92:{x: 470, y: 408, w: 92, h: 92, nome: '92',  peso: 2 },
+		93:{x: 472, y: 345, w: 130, h: 132, nome: '93',  peso: 4 },
+		94:{x: 496, y: 349, w: 105, h: 153, nome: '94',  peso: 4 },
+		95:{x: 534, y: 276, w: 83, h: 138, nome: '95',  peso: 3 },
+		96:{x: 554, y: 501, w: 265, h: 119, nome: '96',  peso: 12 },
+		97:{x: 457, y: 226, w: 145, h: 117, nome: '97',  peso: 4 },
+		98:{x: 350, y: 224, w: 174, h: 181, nome: '98',  peso: 12 },
+		99:{x: 147, y: 147, w: 80, h: 121, nome: '16',  peso: 5 }, // aqui
+		100:{x: 325, y: 3, w: 85, h: 85, nome: '100',  peso: 1 },
+		101:{x: 276, y: 87, w: 245, h: 205, nome: '101',  peso: 8 },
+		102:{x: 342, y: 1, w: 167, h: 127, nome: '102',  peso: 7 },
+		103:{x: 187, y: 152, w: 79, h: 120, nome: '103',  peso: 1 },
+		104:{x: 467, y: 3, w: 73, h: 141, nome: '104',  peso: 4 },
+		105:{x: 470, y: 78, w: 114, h: 110, nome: '105',  peso: 3 },
+		106:{x: 435, y: 87, w: 103, h: 151, nome: '106',  peso: 4 },
+		107:{x: 455, y: 171, w: 96, h: 122, nome: '107',  peso: 3 },
+		108:{x: 460, y: 215, w: 94, h: 76, nome: '108',  peso: 1 },
+		109:{x: 482, y: 196, w: 170, h: 141, nome: '109',  peso: 6 },
+		110:{x: 550, y: 295, w: 165, h: 80, nome: '110',  peso: 5 },
+		111:{x: 649, y: 302, w: 116, h: 76, nome: '111',  peso: 3 },
+		112:{x: 586, y: 195, w: 135, h: 181, nome: '112',  peso: 7 },
+		113:{x: 472, y: 9, w: 280, h: 138, nome: '113',  peso: 13 },
+		114:{x: 519, y: 71, w: 239, h: 119, nome: '114',  peso: 11 },
+		115:{x: 568, y: 131, w: 135, h: 106, nome: '115',  peso: 4 },
+		116:{x: 483, y: 195, w: 111, h: 88, nome: '116',  peso: 3 },
+		117:{x: 470, y: 160, w: 125, h: 80, nome: '117',  peso: 3 },
+		118:{x: 518, y: 122, w: 99, h: 103, nome: '118',  peso: 1 },
+		119:{x: 568, y: 173, w: 84, h: 90, nome: '119',  peso: 1 },
+		120:{x: 266, y: 436, w: 91, h: 74, nome: '120',  peso: 1 },
+		121:{x: 697, y: 293, w: 134, h: 76, nome: '121',  peso: 4 },
+		122:{x: 705, y: 337, w: 148, h: 90, nome: '122',  peso: 5 },
+		123:{x: 145, y: 481, w: 74, h: 88, nome: '123',  peso: 2 },
+		124:{x: 712, y: 381, w: 154, h: 86, nome: '124',  peso: 6 },
+		125:{x: 147, y: 147, w: 80, h: 121, nome: '16',  peso: 5 }, // aqui
+		126:{x: 717, y: 403, w: 171, h: 91, nome: '126',  peso: 7 },
+		127:{x: 803, y: 386, w: 86, h: 105, nome: '127',  peso: 1 },
+		128:{x: 147, y: 147, w: 80, h: 121, nome: '16',  peso: 5 }, // aqui
+		129:{x: 147, y: 147, w: 80, h: 121, nome: '16',  peso: 5 }, // aqui
+		130:{x: 765, y: 265, w: 128, h: 98, nome: '130',  peso: 4 },
+		131:{x: 826, y: 248, w: 96, h: 84, nome: '131',  peso: 2 },
+		132:{x: 829, y: 264, w: 138, h: 110, nome: '132',  peso: 5 },
+		133:{x: 802, y: 304, w: 145, h: 148, nome: '133',  peso: 8 },
+		134:{x: 821, y: 395, w: 179, h: 95, nome: '134',  peso: 8 },
+		135:{x: 342, y: 18, w: 173, h: 152, nome: '135',  peso: 10 },
+		136:{x: 822, y: 424, w: 102, h: 160, nome: '136',  peso: 8 },
+		137:{x: 923, y: 403, w: 87, h: 181, nome: '137',  peso: 8 },
+		138:{x: 946, y: 416, w: 94, h: 170, nome: '138',  peso: 9 },
+		139:{x: 754, y: 519, w: 146, h: 76, nome: '139',  peso: 6 },
+		140:{x: 834, y: 518, w: 84, h: 68, nome: '140',  peso: 1 },
+		141:{x: 850, y: 513, w: 141, h: 71, nome: '141',  peso: 6 },
+		142:{x: 925, y: 517, w: 91, h: 70, nome: '142',  peso: 1 },
+		143:{x: 726, y: 526, w: 93, h: 159, nome: '143',  peso: 6 },
+		144:{x: 728, y: 619, w: 74, h: 83, nome: '144',  peso: 1 },
+		145:{x: 728, y: 620, w: 145, h: 74, nome: '145',  peso: 4 },
+		146:{x: 752, y: 529, w: 98, h: 122, nome: '146',  peso: 4 },
+		147:{x: 782, y: 584, w: 150, h: 85, nome: '147',  peso: 5 },
+		148:{x: 783, y: 584, w: 89, h: 109, nome: '148',  peso: 3 },
+		149:{x: 806, y: 624, w: 190, h: 75, nome: '149',  peso: 7 },
+		150:{x: 865, y: 598, w: 133, h: 74, nome: '150',  peso: 3 },
+		151:{x: 932, y: 605, w: 68, h: 99, nome: '151',  peso: 1 },
+		152:{x: 934, y: 603, w: 195, h: 82, nome: '152',  peso: 7 },
+		153:{x: 833, y: 520, w: 119, h: 148, nome: '153',  peso: 7 },
+		154:{x: 933, y: 519, w: 82, h: 153, nome: '154',  peso: 6 },
+		155:{x: 934, y: 401, w: 107, h: 84, nome: '155',  peso: 2 },
+		156:{x: 974, y: 374, w: 73, h: 109, nome: '156',  peso: 2 },
+		157:{x: 881, y: 316, w: 120, h: 152, nome: '157',  peso: 6 },
+		158:{x: 978, y: 350, w: 70, h: 91, nome: '158',  peso: 1 },
+		159:{x: 982, y: 269, w: 89, h: 148, nome: '159',  peso: 5 },
+		160:{x: 934, y: 255, w: 114, h: 161, nome: '160',  peso: 7 },
+		161:{x: 147, y: 147, w: 80, h: 121, nome: '16',  peso: 5 }, // aqui
+		162:{x: 856, y: 246, w: 137, h: 121, nome: '162',  peso: 4 },
+		163:{x: 874, y: 232, w: 129, h: 90, nome: '163',  peso: 3 },
+		164:{x: 998, y: 263, w: 131, h: 72, nome: '164',  peso: 4 },
+		165:{x: 991, y: 210, w: 76, h: 124, nome: '165',  peso: 3 },
+		166:{x: 937, y: 255, w: 131, h: 80, nome: '166',  peso: 3 },
+		167:{x: 936, y: 195, w: 88, h: 125, nome: '167',  peso: 3 },
+		168:{x: 926, y: 301, w: 119, h: 140, nome: '168',  peso: 5 },
+		169:{x: 857, y: 232, w: 82, h: 82, nome: '169',  peso: 1 },
+		170:{x: 873, y: 186, w: 83, h: 112, nome: '170',  peso: 2 },
+		171:{x: 700, y: 174, w: 83, h: 192, nome: '171',  peso: 7 },
+		172:{x: 753, y: 153, w: 181, h: 92, nome: '172',  peso: 5 },
+		173:{x: 846, y: 154, w: 111, h: 96, nome: '173',  peso: 3 },
+		174:{x: 890, y: 184, w: 133, h: 78, nome: '174',  peso: 4 },
+		175:{x: 956, y: 195, w: 101, h: 81, nome: '175',  peso: 2 },
+		176:{x: 988, y: 111, w: 108, h: 167, nome: '176',  peso: 6 },
+		177:{x: 957, y: 107, w: 82, h: 153, nome: '177',  peso: 5 },
+		178:{x: 965, y: 104, w: 114, h: 74, nome: '178',  peso: 2 },
+		179:{x: 1013, y: 94, w: 95, h: 84, nome: '179',  peso: 1 },
+		180:{x: 895, y: 96, w: 141, h: 80, nome: '180',  peso: 4 },
+		181:{x: 968, y: 52, w: 82, h: 119, nome: '181',  peso: 3 },
+		182:{x: 889, y: 95, w: 70, h: 157, nome: '182',  peso: 5 },
+		183:{x: 799, y: 100, w: 114, h: 122, nome: '183',  peso: 4 },
+		184:{x: 733, y: 103, w: 120, h: 121, nome: '184',  peso: 4 },
+		185:{x: 786, y: 101, w: 79, h: 70, nome: '185',  peso: 1 },
+		186:{x: 797, y: 95, w: 160, h: 77, nome: '186',  peso: 4 },
+		187:{x: 815, y: 45, w: 147, h: 108, nome: '187',  peso: 4 },
+		188:{x: 892, y: 86, w: 69, h: 77, nome: '188',  peso: 1 },
+		189:{x: 893, y: 17, w: 83, h: 133, nome: '189',  peso: 3 },
+		190:{x: 835, y: 13, w: 141, h: 81, nome: '190',  peso: 3 },
+		191:{x: 814, y: 2, w: 88, h: 116, nome: '191',  peso: 2 },
+		192:{x: 786, y: 51, w: 95, h: 119, nome: '192',  peso: 3 },
+		193:{x: 708, y: 103, w: 145, h: 75, nome: '193',  peso: 4 },
+		194:{x: 745, y: 7, w: 155, h: 77, nome: '194',  peso: 4 },
+		195:{x: 688, y: 10, w: 126, h: 73, nome: '195',  peso: 2 },
+		196:{x: 686, y: 6, w: 71, h: 131, nome: '196',  peso: 2 },
+		197:{x: 690, y: 16, w: 122, h: 120, nome: '197',  peso: 3 },
+		198:{x: 684, y: 75, w: 75, h: 98, nome: '198',  peso: 1 },
+		199:{x: 683, y: 105, w: 91, h: 70, nome: '199',  peso: 1 },
+		200:{x: 636, y: 108, w: 114, h: 91, nome: '200',  peso: 2 },
+		201:{x:637 , y: 132, w: 103, h: 94, nome: '201',  peso: 2 },
+		202:{x: 671, y: 159, w: 101, h: 81, nome: '202',  peso: 2 },
+		203:{x: 708, y: 156, w: 94, h: 85, nome: '203',  peso: 2 },
+		204:{x: 699, y: 106, w: 76, h: 132, nome: '204',  peso: 3 },
+		205:{x: 910, y: 1, w: 67, h: 82, nome: '205',  peso: 1 },
+		206:{x: 495, y: 432, w: 69, h: 79, nome: '206',  peso: 1 },
+		207:{x: 524, y: 171, w: 70, h: 90, nome: 'a',  peso: 1 },
+		208:{x: 528, y: 159, w: 90, h: 80, nome: 'c',  peso: 1 },
+		209:{x: 543, y: 157, w: 76, h: 95, nome: 'd',  peso: 1 },
+		210:{x: 526, y: 172, w: 107, h: 90, nome: 'e',  peso: 1 },
+		211:{x: 552, y: 155, w: 83, h: 86, nome: 'f',  peso: 1 },
+		212:{x: 674, y: 106, w: 79, h: 119, nome: 'h',  peso: 1 },
+		213:{x: 527, y: 173, w: 79, h: 79, nome: 'i',  peso: 1 }
 	};
+	
+	vertices = {
+		1:{	qtdArestas: 1, 
+			aresta: {
+				1 : arestas[1]
+			}
+		},
+		2:{	qtdArestas: 1, 
+			aresta: {
+				1 : arestas[2],
+			}
+		},
+	}
 	
 	$(document).ready(function() {
 		$("#pinSelecionadoOrigem").css({
@@ -268,6 +915,14 @@
 		   	"top": coordenadasPins[1].y,
  			"left": coordenadasPins[1].x
 		});
+		
+		for(var i in arestas){
+			$("#" + i).css({
+				"position": "absolute",
+				"top": arestas[i].y,
+				"left": arestas[i].x
+			});			
+		};
 
 		$("#menu").click(function(){
 			var origem = $("#origem option:selected").val();
@@ -286,7 +941,7 @@
 						"top": coordenadasPins[i].y,
 						"left": coordenadasPins[i].x
 					});
-				}
+				}				
 			};
 		});
 	});
@@ -304,228 +959,222 @@
     <img src="imgs/Mapa/Labels.png" id="Labels" />
     <img src="imgs/Mapa/pinSelecionado.png" id="pinSelecionadoOrigem" />
     <img src="imgs/Mapa/pinSelecionado.png" id="pinSelecionadoDestino" />
-    <!--
-    <img src="imgs/CaminhoSelecionado/aresta1.png" id="aresta1" />
-    <img src="imgs/CaminhoSelecionado/aresta2.png" id="aresta2" />
-    <img src="imgs/CaminhoSelecionado/aresta3.png" id="aresta3" />
-    <img src="imgs/CaminhoSelecionado/aresta4.png" id="aresta4" />
-    <img src="imgs/CaminhoSelecionado/aresta5.png" id="aresta5" />
-    <img src="imgs/CaminhoSelecionado/aresta6.png" id="aresta6" />
-    <img src="imgs/CaminhoSelecionado/aresta7.png" id="aresta7" />
-    <img src="imgs/CaminhoSelecionado/aresta8.png" id="aresta8" />
-    <img src="imgs/CaminhoSelecionado/aresta9.png" id="aresta9" />
-    <img src="imgs/CaminhoSelecionado/aresta10.png" id="aresta10" />
-    <img src="imgs/CaminhoSelecionado/aresta11.png" id="aresta11" />
-    <img src="imgs/CaminhoSelecionado/aresta12.png" id="aresta12" />
-    <img src="imgs/CaminhoSelecionado/aresta13.png" id="aresta13" />
-    <img src="imgs/CaminhoSelecionado/aresta14.png" id="aresta14" />
-    <img src="imgs/CaminhoSelecionado/aresta15.png" id="aresta15" />
-    <img src="imgs/CaminhoSelecionado/aresta16.png" id="aresta16" />
-    <img src="imgs/CaminhoSelecionado/aresta17.png" id="aresta17" />
-    <img src="imgs/CaminhoSelecionado/aresta18.png" id="aresta18" />
-    <img src="imgs/CaminhoSelecionado/aresta19.png" id="aresta19" />
-    <img src="imgs/CaminhoSelecionado/aresta20.png" id="aresta20" />
-    <img src="imgs/CaminhoSelecionado/aresta21.png" id="aresta21" />
-    <img src="imgs/CaminhoSelecionado/aresta22.png" id="aresta22" />
-    <img src="imgs/CaminhoSelecionado/aresta23.png" id="aresta23" />
-    <img src="imgs/CaminhoSelecionado/aresta24.png" id="aresta24" />
-    <img src="imgs/CaminhoSelecionado/aresta25.png" id="aresta25" />
-    <img src="imgs/CaminhoSelecionado/aresta26.png" id="aresta26" />
-    <img src="imgs/CaminhoSelecionado/aresta27.png" id="aresta27" />
-    <img src="imgs/CaminhoSelecionado/aresta28.png" id="aresta28" />
-    <img src="imgs/CaminhoSelecionado/aresta29.png" id="aresta29" />
-    <img src="imgs/CaminhoSelecionado/aresta30.png" id="aresta30" />
-    <img src="imgs/CaminhoSelecionado/aresta31.png" id="aresta31" />
-    <img src="imgs/CaminhoSelecionado/aresta32.png" id="aresta32" />
-    <img src="imgs/CaminhoSelecionado/aresta33.png" id="aresta33" />
-    <img src="imgs/CaminhoSelecionado/aresta34.png" id="aresta34" />
-    <img src="imgs/CaminhoSelecionado/aresta35.png" id="aresta35" />
-    <img src="imgs/CaminhoSelecionado/aresta36.png" id="aresta36" />
-    <img src="imgs/CaminhoSelecionado/aresta37.png" id="aresta37" />
-    <img src="imgs/CaminhoSelecionado/aresta38.png" id="aresta38" />
-    <img src="imgs/CaminhoSelecionado/aresta39.png" id="aresta39" />
-    <img src="imgs/CaminhoSelecionado/aresta40.png" id="aresta40" />
-    <img src="imgs/CaminhoSelecionado/aresta41.png" id="aresta41" />
-    <img src="imgs/CaminhoSelecionado/aresta42.png" id="aresta42" />
-    <img src="imgs/CaminhoSelecionado/aresta43.png" id="aresta43" />
-    <img src="imgs/CaminhoSelecionado/aresta44.png" id="aresta44" />
-    <img src="imgs/CaminhoSelecionado/aresta45.png" id="aresta45" />
-    <img src="imgs/CaminhoSelecionado/aresta46.png" id="aresta46" />
-    <img src="imgs/CaminhoSelecionado/aresta47.png" id="aresta47" />
-    <img src="imgs/CaminhoSelecionado/aresta48.png" id="aresta48" />
-    <img src="imgs/CaminhoSelecionado/aresta49.png" id="aresta49" />
-    <img src="imgs/CaminhoSelecionado/aresta50.png" id="aresta50" />
-    <img src="imgs/CaminhoSelecionado/aresta51.png" id="aresta51" />
-    <img src="imgs/CaminhoSelecionado/aresta52.png" id="aresta52" />
-    <img src="imgs/CaminhoSelecionado/aresta53.png" id="aresta53" />
-    <img src="imgs/CaminhoSelecionado/aresta54.png" id="aresta54" />
-    <img src="imgs/CaminhoSelecionado/aresta55.png" id="aresta55" />
-    <img src="imgs/CaminhoSelecionado/aresta56.png" id="aresta56" />
-    <img src="imgs/CaminhoSelecionado/aresta57.png" id="aresta57" />
-    <img src="imgs/CaminhoSelecionado/aresta58.png" id="aresta58" />
-    <img src="imgs/CaminhoSelecionado/aresta59.png" id="aresta59" />
-    <img src="imgs/CaminhoSelecionado/aresta60.png" id="aresta60" />
-    <img src="imgs/CaminhoSelecionado/aresta61.png" id="aresta61" />
-    <img src="imgs/CaminhoSelecionado/aresta62.png" id="aresta62" />
-    <img src="imgs/CaminhoSelecionado/aresta63.png" id="aresta63" />
-    <img src="imgs/CaminhoSelecionado/aresta64.png" id="aresta64" />
-    <img src="imgs/CaminhoSelecionado/aresta65.png" id="aresta65" />
-    <img src="imgs/CaminhoSelecionado/aresta66.png" id="aresta66" />
-    <img src="imgs/CaminhoSelecionado/aresta67.png" id="aresta67" />
-    <img src="imgs/CaminhoSelecionado/aresta68.png" id="aresta68" />
-    <img src="imgs/CaminhoSelecionado/aresta69.png" id="aresta69" />
-    <img src="imgs/CaminhoSelecionado/aresta70.png" id="aresta70" />
-    <img src="imgs/CaminhoSelecionado/aresta71.png" id="aresta71" />
-    <img src="imgs/CaminhoSelecionado/aresta72.png" id="aresta72" />
-    <img src="imgs/CaminhoSelecionado/aresta73.png" id="aresta73" />
-    <img src="imgs/CaminhoSelecionado/aresta74.png" id="aresta74" />
-    <img src="imgs/CaminhoSelecionado/aresta75.png" id="aresta75" />
-    <img src="imgs/CaminhoSelecionado/aresta76.png" id="aresta76" />
-    <img src="imgs/CaminhoSelecionado/aresta77.png" id="aresta77" />
-    <img src="imgs/CaminhoSelecionado/aresta78.png" id="aresta78" />
-    <img src="imgs/CaminhoSelecionado/aresta79.png" id="aresta79" />
-    <img src="imgs/CaminhoSelecionado/aresta70.png" id="aresta70" />
-    <img src="imgs/CaminhoSelecionado/aresta81.png" id="aresta81" />
-    <img src="imgs/CaminhoSelecionado/aresta82.png" id="aresta82" />
-    <img src="imgs/CaminhoSelecionado/aresta83.png" id="aresta83" />
-    <img src="imgs/CaminhoSelecionado/aresta84.png" id="aresta84" />
-    <img src="imgs/CaminhoSelecionado/aresta85.png" id="aresta85" />
-    <img src="imgs/CaminhoSelecionado/aresta86.png" id="aresta86" />
-    <img src="imgs/CaminhoSelecionado/aresta87.png" id="aresta87" />
-    <img src="imgs/CaminhoSelecionado/aresta88.png" id="aresta88" />
-    <img src="imgs/CaminhoSelecionado/aresta89.png" id="aresta89" />
-    <img src="imgs/CaminhoSelecionado/aresta90.png" id="aresta90" />
-    <img src="imgs/CaminhoSelecionado/aresta91.png" id="aresta91" />
-    <img src="imgs/CaminhoSelecionado/aresta92.png" id="aresta92" />
-    <img src="imgs/CaminhoSelecionado/aresta93.png" id="aresta93" />
-    <img src="imgs/CaminhoSelecionado/aresta94.png" id="aresta94" />
-    <img src="imgs/CaminhoSelecionado/aresta95.png" id="aresta95" />
-    <img src="imgs/CaminhoSelecionado/aresta96.png" id="aresta96" />
-    <img src="imgs/CaminhoSelecionado/aresta97.png" id="aresta97" />
-    <img src="imgs/CaminhoSelecionado/aresta98.png" id="aresta98" />
-    <img src="imgs/CaminhoSelecionado/aresta99.png" id="aresta99" />
-    <img src="imgs/CaminhoSelecionado/aresta100.png" id="aresta100" />
-    <img src="imgs/CaminhoSelecionado/aresta101.png" id="aresta101" />
-    <img src="imgs/CaminhoSelecionado/aresta102.png" id="aresta102" />
-    <img src="imgs/CaminhoSelecionado/aresta103.png" id="aresta103" />
-    <img src="imgs/CaminhoSelecionado/aresta104.png" id="aresta104" />
-    <img src="imgs/CaminhoSelecionado/aresta105.png" id="aresta105" />
-    <img src="imgs/CaminhoSelecionado/aresta106.png" id="aresta106" />
-    <img src="imgs/CaminhoSelecionado/aresta107.png" id="aresta107" />
-    <img src="imgs/CaminhoSelecionado/aresta108.png" id="aresta108" />
-    <img src="imgs/CaminhoSelecionado/aresta109.png" id="aresta109" />
-    <img src="imgs/CaminhoSelecionado/aresta110.png" id="aresta110" />
-    <img src="imgs/CaminhoSelecionado/aresta111.png" id="aresta111" />
-    <img src="imgs/CaminhoSelecionado/aresta112.png" id="aresta112" />
-    <img src="imgs/CaminhoSelecionado/aresta113.png" id="aresta113" />
-    <img src="imgs/CaminhoSelecionado/aresta114.png" id="aresta114" />
-    <img src="imgs/CaminhoSelecionado/aresta115.png" id="aresta115" />
-    <img src="imgs/CaminhoSelecionado/aresta116.png" id="aresta116" />
-    <img src="imgs/CaminhoSelecionado/aresta117.png" id="aresta117" />
-    <img src="imgs/CaminhoSelecionado/aresta118.png" id="aresta118" />
-    <img src="imgs/CaminhoSelecionado/aresta119.png" id="aresta119" />
-    <img src="imgs/CaminhoSelecionado/aresta120.png" id="aresta120" />
-     <img src="imgs/CaminhoSelecionado/aresta121.png" id="aresta121" />
-    <img src="imgs/CaminhoSelecionado/aresta122.png" id="aresta122" />
-    <img src="imgs/CaminhoSelecionado/aresta123.png" id="aresta123" />
-    <img src="imgs/CaminhoSelecionado/aresta124.png" id="aresta124" />
-    <img src="imgs/CaminhoSelecionado/aresta125.png" id="aresta125" />
-    <img src="imgs/CaminhoSelecionado/aresta126.png" id="aresta126" />
-    <img src="imgs/CaminhoSelecionado/aresta127.png" id="aresta127" />
-    <img src="imgs/CaminhoSelecionado/aresta128.png" id="aresta128" />
-    <img src="imgs/CaminhoSelecionado/aresta129.png" id="aresta129" />
-    <img src="imgs/CaminhoSelecionado/aresta130.png" id="aresta130" />
-    <img src="imgs/CaminhoSelecionado/aresta131.png" id="aresta131" />
-    <img src="imgs/CaminhoSelecionado/aresta132.png" id="aresta132" />
-    <img src="imgs/CaminhoSelecionado/aresta133.png" id="aresta133" />
-    <img src="imgs/CaminhoSelecionado/aresta134.png" id="aresta134" />
-    <img src="imgs/CaminhoSelecionado/aresta135.png" id="aresta135" />
-    <img src="imgs/CaminhoSelecionado/aresta136.png" id="aresta136" />
-    <img src="imgs/CaminhoSelecionado/aresta137.png" id="aresta137" />
-    <img src="imgs/CaminhoSelecionado/aresta138.png" id="aresta138" />
-    <img src="imgs/CaminhoSelecionado/aresta139.png" id="aresta139" />
-    <img src="imgs/CaminhoSelecionado/aresta140.png" id="aresta140" />
-    <img src="imgs/CaminhoSelecionado/aresta141.png" id="aresta141" />
-    <img src="imgs/CaminhoSelecionado/aresta142.png" id="aresta142" />
-    <img src="imgs/CaminhoSelecionado/aresta143.png" id="aresta143" />
-    <img src="imgs/CaminhoSelecionado/aresta144.png" id="aresta144" />
-    <img src="imgs/CaminhoSelecionado/aresta145.png" id="aresta145" />
-    <img src="imgs/CaminhoSelecionado/aresta146.png" id="aresta146" />
-    <img src="imgs/CaminhoSelecionado/aresta147.png" id="aresta147" />
-    <img src="imgs/CaminhoSelecionado/aresta148.png" id="aresta148" />
-    <img src="imgs/CaminhoSelecionado/aresta149.png" id="aresta149" />
-    <img src="imgs/CaminhoSelecionado/aresta150.png" id="aresta150" />
-    <img src="imgs/CaminhoSelecionado/aresta151.png" id="aresta151" />
-    <img src="imgs/CaminhoSelecionado/aresta152.png" id="aresta152" />
-    <img src="imgs/CaminhoSelecionado/aresta153.png" id="aresta153" />
-    <img src="imgs/CaminhoSelecionado/aresta154.png" id="aresta154" />
-    <img src="imgs/CaminhoSelecionado/aresta155.png" id="aresta155" />
-    <img src="imgs/CaminhoSelecionado/aresta156.png" id="aresta156" />
-    <img src="imgs/CaminhoSelecionado/aresta157.png" id="aresta157" />
-    <img src="imgs/CaminhoSelecionado/aresta158.png" id="aresta158" />
-    <img src="imgs/CaminhoSelecionado/aresta159.png" id="aresta159" />
-    <img src="imgs/CaminhoSelecionado/aresta160.png" id="aresta160" />
-    <img src="imgs/CaminhoSelecionado/aresta161.png" id="aresta161" />
-    <img src="imgs/CaminhoSelecionado/aresta162.png" id="aresta162" />
-    <img src="imgs/CaminhoSelecionado/aresta163.png" id="aresta163" />
-    <img src="imgs/CaminhoSelecionado/aresta164.png" id="aresta164" />
-    <img src="imgs/CaminhoSelecionado/aresta165.png" id="aresta165" />
-    <img src="imgs/CaminhoSelecionado/aresta166.png" id="aresta166" />
-    <img src="imgs/CaminhoSelecionado/aresta167.png" id="aresta167" />
-    <img src="imgs/CaminhoSelecionado/aresta168.png" id="aresta168" />
-    <img src="imgs/CaminhoSelecionado/aresta169.png" id="aresta169" />
-    <img src="imgs/CaminhoSelecionado/aresta170.png" id="aresta170" />
-    <img src="imgs/CaminhoSelecionado/aresta171.png" id="aresta171" />
-    <img src="imgs/CaminhoSelecionado/aresta172.png" id="aresta172" />
-    <img src="imgs/CaminhoSelecionado/aresta173.png" id="aresta173" />
-    <img src="imgs/CaminhoSelecionado/aresta174.png" id="aresta174" />
-    <img src="imgs/CaminhoSelecionado/aresta175.png" id="aresta175" />
-    <img src="imgs/CaminhoSelecionado/aresta176.png" id="aresta176" />
-    <img src="imgs/CaminhoSelecionado/aresta177.png" id="aresta177" />
-    <img src="imgs/CaminhoSelecionado/aresta178.png" id="aresta178" />
-    <img src="imgs/CaminhoSelecionado/aresta179.png" id="aresta179" />
-    <img src="imgs/CaminhoSelecionado/aresta170.png" id="aresta170" />
-    <img src="imgs/CaminhoSelecionado/aresta181.png" id="aresta181" />
-    <img src="imgs/CaminhoSelecionado/aresta182.png" id="aresta182" />
-    <img src="imgs/CaminhoSelecionado/aresta183.png" id="aresta183" />
-    <img src="imgs/CaminhoSelecionado/aresta184.png" id="aresta184" />
-    <img src="imgs/CaminhoSelecionado/aresta185.png" id="aresta185" />
-    <img src="imgs/CaminhoSelecionado/aresta186.png" id="aresta186" />
-    <img src="imgs/CaminhoSelecionado/aresta187.png" id="aresta187" />
-    <img src="imgs/CaminhoSelecionado/aresta188.png" id="aresta188" />
-    <img src="imgs/CaminhoSelecionado/aresta189.png" id="aresta189" />
-    <img src="imgs/CaminhoSelecionado/aresta190.png" id="aresta190" />
-    <img src="imgs/CaminhoSelecionado/aresta191.png" id="aresta191" />
-    <img src="imgs/CaminhoSelecionado/aresta192.png" id="aresta192" />
-    <img src="imgs/CaminhoSelecionado/aresta193.png" id="aresta193" />
-    <img src="imgs/CaminhoSelecionado/aresta194.png" id="aresta194" />
-    <img src="imgs/CaminhoSelecionado/aresta195.png" id="aresta195" />
-    <img src="imgs/CaminhoSelecionado/aresta196.png" id="aresta196" />
-    <img src="imgs/CaminhoSelecionado/aresta197.png" id="aresta197" />
-    <img src="imgs/CaminhoSelecionado/aresta198.png" id="aresta198" />
-    <img src="imgs/CaminhoSelecionado/aresta199.png" id="aresta199" />
-    <img src="imgs/CaminhoSelecionado/aresta200.png" id="aresta200" />
-    <img src="imgs/CaminhoSelecionado/aresta201.png" id="aresta201" />
-    <img src="imgs/CaminhoSelecionado/aresta202.png" id="aresta202" />
-    <img src="imgs/CaminhoSelecionado/aresta203.png" id="aresta203" />
-    <img src="imgs/CaminhoSelecionado/aresta204.png" id="aresta204" />
-    <img src="imgs/CaminhoSelecionado/aresta205.png" id="aresta205" />
-    <img src="imgs/CaminhoSelecionado/aresta206.png" id="aresta206" />
-    <img src="imgs/CaminhoSelecionado/aresta207.png" id="aresta207" />
-    <img src="imgs/CaminhoSelecionado/aresta208.png" id="aresta208" />
-    <img src="imgs/CaminhoSelecionado/aresta209.png" id="aresta209" />
-    <img src="imgs/CaminhoSelecionado/aresta210.png" id="aresta210" />
-    <img src="imgs/CaminhoSelecionado/aresta211.png" id="aresta211" />
-    <img src="imgs/CaminhoSelecionado/aresta212.png" id="aresta212" />
-    <img src="imgs/CaminhoSelecionado/aresta213.png" id="aresta213" />
-    <img src="imgs/CaminhoSelecionado/aresta214.png" id="aresta214" />
-    <img src="imgs/CaminhoSelecionado/aresta215.png" id="aresta215" />
-    <img src="imgs/CaminhoSelecionado/aresta216.png" id="aresta216" />
-    <img src="imgs/CaminhoSelecionado/aresta217.png" id="aresta217" />
-    <img src="imgs/CaminhoSelecionado/aresta218.png" id="aresta218" />
-    <img src="imgs/CaminhoSelecionado/aresta219.png" id="aresta219" />
-    <img src="imgs/CaminhoSelecionado/aresta220.png" id="aresta220" />
--->
+    
+    <span id="containerArestasSelecionadas">
+        <img src="imgs/ArestaSelecionada/Aresta1.png" id="1" />
+        <img src="imgs/ArestaSelecionada/Aresta2.png" id="2" />
+        <img src="imgs/ArestaSelecionada/Aresta3.png" id="3" />
+        <img src="imgs/ArestaSelecionada/Aresta4.png" id="4" />
+        <img src="imgs/ArestaSelecionada/Aresta5.png" id="5" />
+        <img src="imgs/ArestaSelecionada/Aresta6.png" id="6" />
+        <img src="imgs/ArestaSelecionada/Aresta7.png" id="7" />
+        <img src="imgs/ArestaSelecionada/Aresta8.png" id="8" />
+        <img src="imgs/ArestaSelecionada/Aresta9.png" id="9" />
+        <img src="imgs/ArestaSelecionada/Aresta10.png" id="10" />
+        <img src="imgs/ArestaSelecionada/Aresta11.png" id="11" />
+        <img src="imgs/ArestaSelecionada/Aresta12.png" id="12" />
+        <img src="imgs/ArestaSelecionada/Aresta13.png" id="13" />
+        <img src="imgs/ArestaSelecionada/Aresta14.png" id="14" />
+        <img src="imgs/ArestaSelecionada/Aresta15.png" id="15" />
+        <img src="imgs/ArestaSelecionada/Aresta16.png" id="16" />
+        <img src="imgs/ArestaSelecionada/Aresta17.png" id="17" />
+        <img src="imgs/ArestaSelecionada/Aresta18.png" id="18" />
+        <img src="imgs/ArestaSelecionada/Aresta19.png" id="19" />
+        <img src="imgs/ArestaSelecionada/Aresta20.png" id="20" />
+        <img src="imgs/ArestaSelecionada/Aresta21.png" id="21" />
+        <img src="imgs/ArestaSelecionada/Aresta22.png" id="22" />
+        <img src="imgs/ArestaSelecionada/Aresta23.png" id="23" />
+        <img src="imgs/ArestaSelecionada/Aresta24.png" id="24" />
+        <img src="imgs/ArestaSelecionada/Aresta25.png" id="25" />
+        <img src="imgs/ArestaSelecionada/Aresta26.png" id="26" />
+        <img src="imgs/ArestaSelecionada/Aresta27.png" id="27" />
+        <img src="imgs/ArestaSelecionada/Aresta28.png" id="28" />
+        <img src="imgs/ArestaSelecionada/Aresta29.png" id="29" />
+        <img src="imgs/ArestaSelecionada/Aresta30.png" id="30" />
+        <img src="imgs/ArestaSelecionada/Aresta31.png" id="31" />
+        <img src="imgs/ArestaSelecionada/Aresta32.png" id="32" />
+        <img src="imgs/ArestaSelecionada/Aresta33.png" id="33" />
+        <img src="imgs/ArestaSelecionada/Aresta34.png" id="34" />
+        <img src="imgs/ArestaSelecionada/Aresta35.png" id="35" />
+        <img src="imgs/ArestaSelecionada/Aresta36.png" id="36" />
+        <img src="imgs/ArestaSelecionada/Aresta37.png" id="37" />
+        <img src="imgs/ArestaSelecionada/Aresta38.png" id="38" />
+        <img src="imgs/ArestaSelecionada/Aresta39.png" id="39" />
+        <img src="imgs/ArestaSelecionada/Aresta40.png" id="40" />
+        <img src="imgs/ArestaSelecionada/Aresta41.png" id="41" />
+        <img src="imgs/ArestaSelecionada/Aresta42.png" id="42" />
+        <img src="imgs/ArestaSelecionada/Aresta43.png" id="43" />
+        <img src="imgs/ArestaSelecionada/Aresta44.png" id="44" />
+        <img src="imgs/ArestaSelecionada/Aresta45.png" id="45" />
+        <img src="imgs/ArestaSelecionada/Aresta46.png" id="46" />
+        <img src="imgs/ArestaSelecionada/Aresta47.png" id="47" />
+        <img src="imgs/ArestaSelecionada/Aresta48.png" id="48" />
+        <img src="imgs/ArestaSelecionada/Aresta49.png" id="49" />
+        <img src="imgs/ArestaSelecionada/Aresta50.png" id="50" />
+        <img src="imgs/ArestaSelecionada/Aresta51.png" id="51" />
+        <img src="imgs/ArestaSelecionada/Aresta52.png" id="52" />
+        <img src="imgs/ArestaSelecionada/Aresta53.png" id="53" />
+        <img src="imgs/ArestaSelecionada/Aresta54.png" id="54" />
+        <img src="imgs/ArestaSelecionada/Aresta55.png" id="55" />
+        <img src="imgs/ArestaSelecionada/Aresta56.png" id="56" />
+        <img src="imgs/ArestaSelecionada/Aresta57.png" id="57" />
+        <img src="imgs/ArestaSelecionada/Aresta58.png" id="58" />
+        <img src="imgs/ArestaSelecionada/Aresta59.png" id="59" />
+        <img src="imgs/ArestaSelecionada/Aresta60.png" id="60" />
+        <img src="imgs/ArestaSelecionada/Aresta61.png" id="61" />
+        <img src="imgs/ArestaSelecionada/Aresta62.png" id="62" />
+        <img src="imgs/ArestaSelecionada/Aresta63.png" id="63" />
+        <img src="imgs/ArestaSelecionada/Aresta64.png" id="64" />
+        <img src="imgs/ArestaSelecionada/Aresta65.png" id="65" />
+        <img src="imgs/ArestaSelecionada/Aresta66.png" id="66" />
+        <img src="imgs/ArestaSelecionada/Aresta67.png" id="67" />
+        <img src="imgs/ArestaSelecionada/Aresta68.png" id="68" />
+        <img src="imgs/ArestaSelecionada/Aresta69.png" id="69" />
+        <img src="imgs/ArestaSelecionada/Aresta70.png" id="70" />
+        <img src="imgs/ArestaSelecionada/Aresta71.png" id="71" />
+        <img src="imgs/ArestaSelecionada/Aresta72.png" id="72" />
+        <img src="imgs/ArestaSelecionada/Aresta73.png" id="73" />
+        <img src="imgs/ArestaSelecionada/Aresta74.png" id="74" />
+        <img src="imgs/ArestaSelecionada/Aresta75.png" id="75" />
+        <img src="imgs/ArestaSelecionada/Aresta76.png" id="76" />
+        <img src="imgs/ArestaSelecionada/Aresta77.png" id="77" />
+        <img src="imgs/ArestaSelecionada/Aresta78.png" id="78" />
+        <img src="imgs/ArestaSelecionada/Aresta79.png" id="79" />
+        <img src="imgs/ArestaSelecionada/Aresta70.png" id="70" />
+        <img src="imgs/ArestaSelecionada/Aresta81.png" id="81" />
+        <img src="imgs/ArestaSelecionada/Aresta82.png" id="82" />
+        <img src="imgs/ArestaSelecionada/Aresta83.png" id="83" />
+        <img src="imgs/ArestaSelecionada/Aresta84.png" id="84" />
+        <img src="imgs/ArestaSelecionada/Aresta85.png" id="85" />
+        <img src="imgs/ArestaSelecionada/Aresta86.png" id="86" />
+        <img src="imgs/ArestaSelecionada/Aresta87.png" id="87" />
+        <img src="imgs/ArestaSelecionada/Aresta88.png" id="88" />
+        <img src="imgs/ArestaSelecionada/Aresta89.png" id="89" />
+        <img src="imgs/ArestaSelecionada/Aresta90.png" id="90" />
+        <img src="imgs/ArestaSelecionada/Aresta91.png" id="91" />
+        <img src="imgs/ArestaSelecionada/Aresta92.png" id="92" />
+        <img src="imgs/ArestaSelecionada/Aresta93.png" id="93" />
+        <img src="imgs/ArestaSelecionada/Aresta94.png" id="94" />
+        <img src="imgs/ArestaSelecionada/Aresta95.png" id="95" />
+        <img src="imgs/ArestaSelecionada/Aresta96.png" id="96" />
+        <img src="imgs/ArestaSelecionada/Aresta97.png" id="97" />
+        <img src="imgs/ArestaSelecionada/Aresta98.png" id="98" />
+        <img src="imgs/ArestaSelecionada/Aresta99.png" id="99" />
+        <img src="imgs/ArestaSelecionada/Aresta100.png" id="100" />
+        <img src="imgs/ArestaSelecionada/Aresta101.png" id="101" />
+        <img src="imgs/ArestaSelecionada/Aresta102.png" id="102" />
+        <img src="imgs/ArestaSelecionada/Aresta103.png" id="103" />
+        <img src="imgs/ArestaSelecionada/Aresta104.png" id="104" />
+        <img src="imgs/ArestaSelecionada/Aresta105.png" id="105" />
+        <img src="imgs/ArestaSelecionada/Aresta106.png" id="106" />
+        <img src="imgs/ArestaSelecionada/Aresta107.png" id="107" />
+        <img src="imgs/ArestaSelecionada/Aresta108.png" id="108" />
+        <img src="imgs/ArestaSelecionada/Aresta109.png" id="109" />
+        <img src="imgs/ArestaSelecionada/Aresta110.png" id="110" />
+        <img src="imgs/ArestaSelecionada/Aresta111.png" id="111" />
+        <img src="imgs/ArestaSelecionada/Aresta112.png" id="112" />
+        <img src="imgs/ArestaSelecionada/Aresta113.png" id="113" />
+        <img src="imgs/ArestaSelecionada/Aresta114.png" id="114" />
+        <img src="imgs/ArestaSelecionada/Aresta115.png" id="115" />
+        <img src="imgs/ArestaSelecionada/Aresta116.png" id="116" />
+        <img src="imgs/ArestaSelecionada/Aresta117.png" id="117" />
+        <img src="imgs/ArestaSelecionada/Aresta118.png" id="118" />
+        <img src="imgs/ArestaSelecionada/Aresta119.png" id="119" />
+        <img src="imgs/ArestaSelecionada/Aresta120.png" id="120" />
+         <img src="imgs/ArestaSelecionada/Aresta121.png" id="121" />
+        <img src="imgs/ArestaSelecionada/Aresta122.png" id="122" />
+        <img src="imgs/ArestaSelecionada/Aresta123.png" id="123" />
+        <img src="imgs/ArestaSelecionada/Aresta124.png" id="124" />
+        <img src="imgs/ArestaSelecionada/Aresta125.png" id="125" />
+        <img src="imgs/ArestaSelecionada/Aresta126.png" id="126" />
+        <img src="imgs/ArestaSelecionada/Aresta127.png" id="127" />
+        <img src="imgs/ArestaSelecionada/Aresta128.png" id="128" />
+        <img src="imgs/ArestaSelecionada/Aresta129.png" id="129" />
+        <img src="imgs/ArestaSelecionada/Aresta130.png" id="130" />
+        <img src="imgs/ArestaSelecionada/Aresta131.png" id="131" />
+        <img src="imgs/ArestaSelecionada/Aresta132.png" id="132" />
+        <img src="imgs/ArestaSelecionada/Aresta133.png" id="133" />
+        <img src="imgs/ArestaSelecionada/Aresta134.png" id="134" />
+        <img src="imgs/ArestaSelecionada/Aresta135.png" id="135" />
+        <img src="imgs/ArestaSelecionada/Aresta136.png" id="136" />
+        <img src="imgs/ArestaSelecionada/Aresta137.png" id="137" />
+        <img src="imgs/ArestaSelecionada/Aresta138.png" id="138" />
+        <img src="imgs/ArestaSelecionada/Aresta139.png" id="139" />
+        <img src="imgs/ArestaSelecionada/Aresta140.png" id="140" />
+        <img src="imgs/ArestaSelecionada/Aresta141.png" id="141" />
+        <img src="imgs/ArestaSelecionada/Aresta142.png" id="142" />
+        <img src="imgs/ArestaSelecionada/Aresta143.png" id="143" />
+        <img src="imgs/ArestaSelecionada/Aresta144.png" id="144" />
+        <img src="imgs/ArestaSelecionada/Aresta145.png" id="145" />
+        <img src="imgs/ArestaSelecionada/Aresta146.png" id="146" />
+        <img src="imgs/ArestaSelecionada/Aresta147.png" id="147" />
+        <img src="imgs/ArestaSelecionada/Aresta148.png" id="148" />
+        <img src="imgs/ArestaSelecionada/Aresta149.png" id="149" />
+        <img src="imgs/ArestaSelecionada/Aresta150.png" id="150" />
+        <img src="imgs/ArestaSelecionada/Aresta151.png" id="151" />
+        <img src="imgs/ArestaSelecionada/Aresta152.png" id="152" />
+        <img src="imgs/ArestaSelecionada/Aresta153.png" id="153" />
+        <img src="imgs/ArestaSelecionada/Aresta154.png" id="154" />
+        <img src="imgs/ArestaSelecionada/Aresta155.png" id="155" />
+        <img src="imgs/ArestaSelecionada/Aresta156.png" id="156" />
+        <img src="imgs/ArestaSelecionada/Aresta157.png" id="157" />
+        <img src="imgs/ArestaSelecionada/Aresta158.png" id="158" />
+        <img src="imgs/ArestaSelecionada/Aresta159.png" id="159" />
+        <img src="imgs/ArestaSelecionada/Aresta160.png" id="160" />
+        <img src="imgs/ArestaSelecionada/Aresta161.png" id="161" />
+        <img src="imgs/ArestaSelecionada/Aresta162.png" id="162" />
+        <img src="imgs/ArestaSelecionada/Aresta163.png" id="163" />
+        <img src="imgs/ArestaSelecionada/Aresta164.png" id="164" />
+        <img src="imgs/ArestaSelecionada/Aresta165.png" id="165" />
+        <img src="imgs/ArestaSelecionada/Aresta166.png" id="166" />
+        <img src="imgs/ArestaSelecionada/Aresta167.png" id="167" />
+        <img src="imgs/ArestaSelecionada/Aresta168.png" id="168" />
+        <img src="imgs/ArestaSelecionada/Aresta169.png" id="169" />
+        <img src="imgs/ArestaSelecionada/Aresta170.png" id="170" />
+        <img src="imgs/ArestaSelecionada/Aresta171.png" id="171" />
+        <img src="imgs/ArestaSelecionada/Aresta172.png" id="172" />
+        <img src="imgs/ArestaSelecionada/Aresta173.png" id="173" />
+        <img src="imgs/ArestaSelecionada/Aresta174.png" id="174" />
+        <img src="imgs/ArestaSelecionada/Aresta175.png" id="175" />
+        <img src="imgs/ArestaSelecionada/Aresta176.png" id="176" />
+        <img src="imgs/ArestaSelecionada/Aresta177.png" id="177" />
+        <img src="imgs/ArestaSelecionada/Aresta178.png" id="178" />
+        <img src="imgs/ArestaSelecionada/Aresta179.png" id="179" />
+        <img src="imgs/ArestaSelecionada/Aresta170.png" id="170" />
+        <img src="imgs/ArestaSelecionada/Aresta181.png" id="181" />
+        <img src="imgs/ArestaSelecionada/Aresta182.png" id="182" />
+        <img src="imgs/ArestaSelecionada/Aresta183.png" id="183" />
+        <img src="imgs/ArestaSelecionada/Aresta184.png" id="184" />
+        <img src="imgs/ArestaSelecionada/Aresta185.png" id="185" />
+        <img src="imgs/ArestaSelecionada/Aresta186.png" id="186" />
+        <img src="imgs/ArestaSelecionada/Aresta187.png" id="187" />
+        <img src="imgs/ArestaSelecionada/Aresta188.png" id="188" />
+        <img src="imgs/ArestaSelecionada/Aresta189.png" id="189" />
+        <img src="imgs/ArestaSelecionada/Aresta190.png" id="190" />
+        <img src="imgs/ArestaSelecionada/Aresta191.png" id="191" />
+        <img src="imgs/ArestaSelecionada/Aresta192.png" id="192" />
+        <img src="imgs/ArestaSelecionada/Aresta193.png" id="193" />
+        <img src="imgs/ArestaSelecionada/Aresta194.png" id="194" />
+        <img src="imgs/ArestaSelecionada/Aresta195.png" id="195" />
+        <img src="imgs/ArestaSelecionada/Aresta196.png" id="196" />
+        <img src="imgs/ArestaSelecionada/Aresta197.png" id="197" />
+        <img src="imgs/ArestaSelecionada/Aresta198.png" id="198" />
+        <img src="imgs/ArestaSelecionada/Aresta199.png" id="199" />
+        <img src="imgs/ArestaSelecionada/Aresta200.png" id="200" />
+        <img src="imgs/ArestaSelecionada/Aresta201.png" id="201" />
+        <img src="imgs/ArestaSelecionada/Aresta202.png" id="202" />
+        <img src="imgs/ArestaSelecionada/Aresta203.png" id="203" />
+        <img src="imgs/ArestaSelecionada/Aresta204.png" id="204" />
+        <img src="imgs/ArestaSelecionada/Aresta205.png" id="205" />
+        <img src="imgs/ArestaSelecionada/Aresta206.png" id="206" />
+        <img src="imgs/ArestaSelecionada/Arestaa.png" id="207" />
+        <img src="imgs/ArestaSelecionada/Arestac.png" id="208" />
+        <img src="imgs/ArestaSelecionada/Arestad.png" id="209" />
+        <img src="imgs/ArestaSelecionada/Arestae.png" id="210" />
+        <img src="imgs/ArestaSelecionada/Arestaf.png" id="211" />
+        <img src="imgs/ArestaSelecionada/Arestah.png" id="212" />
+        <img src="imgs/ArestaSelecionada/Arestai.png" id="213" />
+    </span>
 </div>
 
 <div id="menu">
